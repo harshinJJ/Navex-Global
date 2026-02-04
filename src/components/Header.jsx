@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./../styles/header.css";
+import logo from "../assets/Headerlogo/Navex-global.png";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,6 +34,7 @@ export default function Header() {
       <header
         className={`header ${showHeader ? "visible" : ""} ${deepScroll ? "dark" : ""}`}
       >
+        {showHeader && <img src={logo} alt="logo" className="mobile-logo" />}
         <div className="header-box">
           <nav className="desktop-menu centered-menu">
             <a href="#about">About</a>
