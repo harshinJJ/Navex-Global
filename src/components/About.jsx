@@ -36,18 +36,7 @@ export default function About() {
           </p>
 
           {/* THREE BLACK CARDS */}
-          <motion.div
-            className="info-cards"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.2, once: false }}
-            variants={{
-              hidden: {},
-              visible: {
-                transition: { staggerChildren: 0.25 },
-              },
-            }}
-          >
+          <div className="info-cards">
             <motion.div
               className="card"
               variants={fadeUp}
@@ -86,7 +75,7 @@ export default function About() {
                 next generation of global trade.
               </p>
             </motion.div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* RIGHT VISION / MISSION / VALUES */}
