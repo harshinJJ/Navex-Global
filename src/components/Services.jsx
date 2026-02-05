@@ -3,8 +3,7 @@ import img1 from "../assets/services/img1.jpg";
 import img2 from "../assets/services/img2.jpg";
 import img3 from "../assets/services/img3.jpg";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Services() {
   return (
@@ -42,23 +41,32 @@ export default function Services() {
 }
 
 function FadeCard({ img, title, desc }) {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, {
-    margin: "-20% 0px -20% 0px",
-    once: false,
-  });
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setVisible(entry.isIntersecting); // fade in/out
+        });
+      },
+      { threshold: 0.3 },
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.div
-      ref={cardRef}
-      className="service-card"
-      initial={{ opacity: 0, y: 40 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <div
+      ref={ref}
+      className={`service-card fade-card ${visible ? "visible" : ""}`}
     >
       <img src={img} alt={title} />
       <h3>{title}</h3>
       <p>{desc}</p>
-    </motion.div>
+    </div>
   );
 }
