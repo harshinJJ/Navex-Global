@@ -92,7 +92,7 @@ export default function Hero() {
       <motion.div
         className="scroll-circle"
         onClick={() => {
-          document.getElementById("about")?.scrollIntoView({
+          document.getElementById("intro")?.scrollIntoView({
             behavior: "smooth",
           });
         }}

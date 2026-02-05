@@ -30,17 +30,17 @@ export default function Header() {
 
         {/* Desktop menu */}
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <a href="#home" onClick={() => setMenuOpen(false)}>
+          <a href="#intro" onClick={() => setMenuOpen(false)}>
             Home
+          </a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
           </a>
           <a href="#services" onClick={() => setMenuOpen(false)}>
             Services
           </a>
           <a href="#solutions" onClick={() => setMenuOpen(false)}>
             Solutions
-          </a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
-            About
           </a>
         </nav>
 

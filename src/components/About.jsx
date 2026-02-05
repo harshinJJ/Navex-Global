@@ -10,6 +10,7 @@ const fadeUp = {
 export default function About() {
   return (
     <section
+      id="about"
       className="brand-section"
       style={{ backgroundImage: `url(${bg})` }}
     >
