@@ -27,7 +27,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="hero">
       <div className="hero-overlay"></div>
       <div className="hero-center-content">
         <motion.img

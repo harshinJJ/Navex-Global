@@ -8,43 +8,47 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 80) {
-        setShowHeader(true);
-      } else {
-        setShowHeader(false);
-      }
+      setShowHeader(window.scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false);
+  };
+
   return (
     <header className={`nav-header ${showHeader ? "visible" : ""}`}>
       <div className="nav-container">
-        {/* Logo */}
-        <div className="logo-wrapper">
+        <div className="logo-wrapper" onClick={() => scrollToSection("hero")}>
           <img src={logo} alt="Navex Logo" className="logo-img" />
           <span className="logo-text">NAVEX GLOBAL</span>
         </div>
 
-        {/* Desktop menu */}
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-          <a href="#intro" onClick={() => setMenuOpen(false)}>
+          <span className="nav-link" onClick={() => scrollToSection("intro")}>
             Home
-          </a>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
+          </span>
+          <span className="nav-link" onClick={() => scrollToSection("about")}>
             About
-          </a>
-          <a href="#services" onClick={() => setMenuOpen(false)}>
+          </span>
+          <span
+            className="nav-link"
+            onClick={() => scrollToSection("services")}
+          >
             Services
-          </a>
-          <a href="#solutions" onClick={() => setMenuOpen(false)}>
+          </span>
+          <span
+            className="nav-link"
+            onClick={() => scrollToSection("solutions")}
+          >
             Solutions
-          </a>
+          </span>
         </nav>
 
-        {/* Hamburger */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}

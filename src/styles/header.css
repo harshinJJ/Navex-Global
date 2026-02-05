@@ -13,6 +13,18 @@
   top: 0;
 }
 
+.nav-link {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: rgba(248, 191, 127);
+}
+
 .nav-container {
   max-width: 1450px;
   margin: 0 auto;
@@ -20,6 +32,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.logo-wrapper:hover {
+  transform: scale(1.05);
+}
+.logo-text {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
 
 .logo {
