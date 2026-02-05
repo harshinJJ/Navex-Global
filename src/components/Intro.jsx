@@ -13,14 +13,16 @@ export default function Intro() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="intro-heading">
-            Built For <span>Global Movement</span>
+            Built For <span> Global Logistics & Freight Movement</span>
           </h2>
 
           <p className="intro-subtext">
-            Navex Global runs logistics operations engineered for speed,
-            accuracy and worldwide reach — ensuring your cargo moves without
-            delays, friction or uncertainty.
+            Navex Global delivers reliable international logistics, freight
+            forwarding and cargo shipping solutions. We help businesses move
+            goods worldwide with speed, accuracy and seamless end-to-end
+            support.
           </p>
+
           {/* 
             <div className="intro-stats">
               <div className="stat-box">

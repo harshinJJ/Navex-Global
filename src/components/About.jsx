@@ -30,9 +30,10 @@ export default function About() {
           </h1>
 
           <p className="intro-text">
-            Smart, reliable and globally connected logistics solutions crafted
-            for modern business needs. We ensure every shipment moves with
-            clarity, speed and absolute precision.
+            We provide international logistics, freight forwarding and global
+            cargo shipping solutions designed for modern businesses. Our team
+            ensures every shipment is handled with clarity, speed and complete
+            precision across air, sea and road networks.
           </p>
 
           {/* THREE BLACK CARDS */}
@@ -45,8 +46,8 @@ export default function About() {
               <h2>01.</h2>
               <h3>Global Reach</h3>
               <p>
-                Seamless freight movement across borders supported by our strong
-                international logistics network.
+                Seamless cross-border freight services powered by our
+                international logistics and supply chain network.
               </p>
             </motion.div>
 
@@ -58,8 +59,8 @@ export default function About() {
               <h2>02.</h2>
               <h3>Built on Precision</h3>
               <p>
-                Every shipment is monitored, optimized and executed with
-                accurate, data-driven control.
+                Every shipment is tracked, optimized and delivered with
+                data-driven accuracy across all freight modes.
               </p>
             </motion.div>
 
@@ -71,8 +72,8 @@ export default function About() {
               <h2>03.</h2>
               <h3>Future Ready</h3>
               <p>
-                Scalable systems and technology-driven operations built for the
-                next generation of global trade.
+                Scalable, technology-driven logistics systems built to support
+                next-generation global trade.
               </p>
             </motion.div>
           </div>
@@ -97,8 +98,9 @@ export default function About() {
           >
             <h3>Our Vision</h3>
             <p>
-              To emerge as a globally valuable logistics provider, enabling
-              seamless trade through reliability, innovation and excellence.
+              To become a global leader in logistics and freight forwarding by
+              enabling smooth, reliable and technology-driven trade across
+              industries.
             </p>
           </motion.div>
 
@@ -109,9 +111,9 @@ export default function About() {
           >
             <h3>Our Mission</h3>
             <p>
-              To provide efficient, secure and cost-effective logistics services
-              by leveraging industry best practices, technology-driven processes
-              and a highly dedicated professional team.
+              To deliver secure, efficient and cost-effective logistics
+              solutions using modern supply chain practices, advanced technology
+              and a dedicated professional team.
             </p>
           </motion.div>
 
