@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Services() {
   return (
-    <section className="services-section">
+    <section id="services" className="services-section">
       <h2 className="services-title">
         Our <span>Services</span>
       </h2>
@@ -48,7 +48,7 @@ function FadeCard({ img, title, desc }) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setVisible(entry.isIntersecting); // fade in/out
+          setVisible(entry.isIntersecting);
         });
       },
       { threshold: 0.3 },
