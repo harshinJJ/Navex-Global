@@ -1,84 +1,59 @@
-import React, { useState, useEffect, useRef } from "react";
+import logo from "../assets/Home/Navex-global.png";
+import { useEffect, useState } from "react";
 import "./../styles/header.css";
-import logo from "../assets/Headerlogo/Navex-global.png";
 
 export default function Header() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(false);
-  const [deepScroll, setDeepScroll] = useState(false);
-  const menuRef = useRef();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const y = window.scrollY;
-      setShowHeader(y > 50);
-      setDeepScroll(y > 200);
+      if (window.scrollY > 80) {
+        setShowHeader(true);
+      } else {
+        setShowHeader(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    const closeMenu = (e) => {
-      if (menuOpen && menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", closeMenu);
-    return () => document.removeEventListener("mousedown", closeMenu);
-  }, [menuOpen]);
-
   return (
-    <>
-      <header
-        className={`header ${showHeader ? "visible" : ""} ${deepScroll ? "dark" : ""}`}
-      >
-        {showHeader && <img src={logo} alt="logo" className="mobile-logo" />}
-        <div className="header-box">
-          <nav className="desktop-menu centered-menu">
-            <a href="#about">About</a>
-            <a href="#vision">Vision</a>
-            <a href="#services">Services</a>
-            <a href="#why">Why Us</a>
-            <a href="#contact">Contact</a>
-          </nav>
+    <header className={`nav-header ${showHeader ? "visible" : ""}`}>
+      <div className="nav-container">
+        {/* Logo */}
+        <div className="logo-wrapper">
+          <img src={logo} alt="Navex Logo" className="logo-img" />
+          <span className="logo-text">NAVEX GLOBAL</span>
         </div>
 
+        {/* Desktop menu */}
+        <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+          <a href="#home" onClick={() => setMenuOpen(false)}>
+            Home
+          </a>
+          <a href="#services" onClick={() => setMenuOpen(false)}>
+            Services
+          </a>
+          <a href="#solutions" onClick={() => setMenuOpen(false)}>
+            Solutions
+          </a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>
+            About
+          </a>
+        </nav>
+
+        {/* Hamburger */}
         <div
-          className={`burger ${menuOpen ? "active" : ""}`}
-          onClick={(e) => {
-            e.stopPropagation();
-            setMenuOpen(!menuOpen);
-          }}
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <div></div>
-          <div></div>
-          <div></div>
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </header>
-
-      {menuOpen && (
-        <div className="menu-overlay" onClick={() => setMenuOpen(false)}></div>
-      )}
-
-      <div ref={menuRef} className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-        <a onClick={() => setMenuOpen(false)} href="#about">
-          About
-        </a>
-        <a onClick={() => setMenuOpen(false)} href="#vision">
-          Vision
-        </a>
-        <a onClick={() => setMenuOpen(false)} href="#services">
-          Services
-        </a>
-        <a onClick={() => setMenuOpen(false)} href="#why">
-          Why Us
-        </a>
-        <a onClick={() => setMenuOpen(false)} href="#contact">
-          Contact
-        </a>
       </div>
-    </>
+    </header>
   );
 }
