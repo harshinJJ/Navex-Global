@@ -74,7 +74,6 @@
   color: #fff;
 }
 
-/* Hamburger button */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -100,8 +99,15 @@
 .hamburger.active span:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
-
-/* Mobile responsive */
+@media (max-width: 1025px) {
+  .nav-container {
+    max-width: 950px;
+  }
+  .nav-links {
+    display: flex;
+    gap: 72px;
+  }
+}
 @media (max-width: 768px) {
   .nav-links {
     position: absolute;

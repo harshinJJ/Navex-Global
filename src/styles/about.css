@@ -65,7 +65,6 @@
   font-size: 18px;
 }
 
-/* CARDS */
 .info-cards {
   display: flex;
   gap: 30px;
@@ -101,7 +100,6 @@
   font-size: 15px;
 }
 
-/* RIGHT SIDE */
 .about-right {
   width: 40%;
   display: flex;
@@ -215,7 +213,7 @@
     justify-content: flex-start;
   }
   .card {
-    flex: 0 0 80%; /* mobile width */
+    flex: 0 0 80%;
     scroll-snap-align: center;
     background: rgba(0, 0, 0, 0.5);
     padding: 25px 20px;
