@@ -45,9 +45,27 @@ function ServiceCard({ img, title, desc }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let lastY = window.scrollY;
+
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => setVisible(entry.isIntersecting));
+        entries.forEach((entry) => {
+          const currentY = window.scrollY;
+          const isScrollingDown = currentY > lastY;
+          lastY = currentY;
+
+          // Only glow when:
+          // 1. card is entering the screen
+          // 2. scrolling DOWN
+          // 3. mobile width
+          if (
+            entry.isIntersecting &&
+            isScrollingDown &&
+            window.innerWidth <= 600
+          ) {
+            setVisible(true);
+          }
+        });
       },
       { threshold: 0.3 },
     );
