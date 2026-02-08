@@ -43,7 +43,6 @@ export default function Services() {
 function ServiceCard({ img, title, desc }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
-
   useEffect(() => {
     let lastY = window.scrollY;
 
@@ -54,10 +53,13 @@ function ServiceCard({ img, title, desc }) {
           const isScrollingDown = currentY > lastY;
           lastY = currentY;
 
-          // Only glow when:
-          // 1. card is entering the screen
-          // 2. scrolling DOWN
-          // 3. mobile width
+          // ---------- DESKTOP BEHAVIOR ----------
+          if (window.innerWidth > 600) {
+            if (entry.isIntersecting) setVisible(true);
+            return;
+          }
+
+          // ---------- MOBILE BEHAVIOR ----------
           if (
             entry.isIntersecting &&
             isScrollingDown &&
