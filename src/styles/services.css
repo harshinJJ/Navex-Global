@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Work+Sans:wght@300;400;500&display=swap");
 
-/* SECTION */
 .services-section {
   background: #070707;
   width: 100%;
@@ -33,10 +32,9 @@
   flex-wrap: wrap;
 }
 
-/* CARD BASE */
 .service-card {
   width: 430px;
-  border-radius: 18px;
+  border-radius: 8px;
   overflow: hidden;
   background: rgba(12, 12, 12, 0.8);
   border: 1px solid rgba(248, 191, 127, 0.18);
@@ -53,7 +51,6 @@
     0px 0px 20px rgba(248, 191, 127, 0.15);
 }
 
-/* IMAGE */
 .service-card__media {
   height: 230px;
   overflow: hidden;
@@ -73,10 +70,12 @@
   filter: brightness(1);
 }
 
-/* CONTENT */
 .service-card__body {
   padding: 26px 26px 32px;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .service-card__title {
@@ -95,7 +94,6 @@
   font-size: 15.5px;
 }
 
-/* FADE ANIMATION */
 .service-card--fade {
   opacity: 0;
   transform: translateY(55px);
@@ -109,7 +107,6 @@
   transform: translateY(0);
 }
 
-/* GLOW ANIMATION WHEN CARD ENTERS VIEW */
 @keyframes cardGlow {
   0% {
     box-shadow: 0 0 0 rgba(248, 191, 127, 0);
@@ -131,14 +128,12 @@
   animation: cardGlow 1.2s ease-out;
 }
 
-/* ONLY ENABLE GLOW ON MOBILE */
 @media (min-width: 601px) {
   .service-card--glow {
     animation: none !important;
   }
 }
 
-/* TABLET */
 @media (max-width: 1024px) {
   .services-title {
     font-size: 48px;
@@ -161,7 +156,6 @@
   }
 }
 
-/* MOBILE */
 @media (max-width: 600px) {
   .services-title {
     font-size: 34px;
