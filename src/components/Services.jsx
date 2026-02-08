@@ -1,9 +1,9 @@
 import "./../styles/services.css";
+import { useEffect, useRef, useState } from "react";
+
 import img1 from "../assets/services/img1.jpg";
 import img2 from "../assets/services/img2.jpg";
 import img3 from "../assets/services/img3.jpg";
-
-import { useEffect, useRef, useState } from "react";
 
 export default function Services() {
   return (
@@ -18,19 +18,19 @@ export default function Services() {
       </p>
 
       <div className="services-container">
-        <FadeCard
+        <ServiceCard
           img={img1}
           title="Global Freight Solutions"
           desc="Reliable air, sea and land freight services designed to deliver cargo safely and on time across international destinations."
         />
 
-        <FadeCard
+        <ServiceCard
           img={img2}
           title="Supply Chain Management"
           desc="End-to-end supply chain optimization that enhances visibility, improves efficiency and reduces logistics costs."
         />
 
-        <FadeCard
+        <ServiceCard
           img={img3}
           title="Customs Clearance & Documentation"
           desc="Fast and compliant customs processing with complete documentation support for smooth cross-border cargo movement."
@@ -40,33 +40,37 @@ export default function Services() {
   );
 }
 
-function FadeCard({ img, title, desc }) {
+function ServiceCard({ img, title, desc }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          setVisible(entry.isIntersecting);
-        });
+        entries.forEach((entry) => setVisible(entry.isIntersecting));
       },
       { threshold: 0.3 },
     );
 
     if (ref.current) observer.observe(ref.current);
-
     return () => observer.disconnect();
   }, []);
 
   return (
     <div
       ref={ref}
-      className={`service-card fade-card ${visible ? "visible" : ""}`}
+      className={`service-card service-card--fade ${
+        visible ? "service-card--visible service-card--glow" : ""
+      }`}
     >
-      <img src={img} alt={title} />
-      <h3>{title}</h3>
-      <p>{desc}</p>
+      <div className="service-card__media">
+        <img src={img} alt={title} className="service-card__image" />
+      </div>
+
+      <div className="service-card__body">
+        <h3 className="service-card__title">{title}</h3>
+        <p className="service-card__desc">{desc}</p>
+      </div>
     </div>
   );
 }
