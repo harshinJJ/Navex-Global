@@ -1,20 +1,23 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import "./i18n";
+
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
 import Footer from "./components/Footer";
-import Intro from "./components/Intro";
-import Services from "./components/Services";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Hero />
-      <Intro />
-      <About />
-      <Services />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ar" element={<Home />} />
+      </Routes>
+
       <Footer />
-    </>
+    </Router>
   );
 }
 

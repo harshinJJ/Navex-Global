@@ -1,3 +1,29 @@
+.lang-switch {
+  display: flex;
+  gap: 8px;
+  margin-left: 15px;
+}
+
+.lang-switch button {
+  background: transparent;
+  border: 1px solid rgba(248, 191, 127, 0.4);
+  padding: 4px 10px;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.lang-switch button.active {
+  background: rgba(248, 191, 127, 0.4);
+  border-color: rgba(248, 191, 127, 0.8);
+}
+
+.lang-switch button:hover {
+  background: rgba(248, 191, 127, 0.3);
+}
+
 .nav-header {
   position: fixed;
   top: -80px;

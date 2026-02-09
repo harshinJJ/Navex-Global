@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
-import "./../styles/hero.css";
-import logo from "../assets/Home/Navex-global.png";
+import { useTranslation } from "react-i18next";
+import "../../styles/hero.css";
+import logo from "../../assets/Home/Navex-global.png";
 
 export default function Hero() {
-  const line1 = "Where Every Move";
-  const line2 = "Matters.";
+  const { t } = useTranslation();
+
+  const line1 = t("hero.line1"); // "Where Every Move"
+  const line2 = t("hero.line2"); // "Matters."
 
   const splitLetters = (text) => text.split("");
 
@@ -29,6 +32,7 @@ export default function Hero() {
   return (
     <section className="hero-section" id="hero">
       <div className="hero-overlay"></div>
+
       <div className="hero-center-content">
         <motion.img
           src={logo}
@@ -47,9 +51,10 @@ export default function Hero() {
           viewport={{ once: false, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
-          Navex Global
+          {t("hero.company")}
         </motion.h3>
 
+        {/* FIRST LINE */}
         <motion.h1
           className="hero-title"
           initial="hidden"
@@ -64,6 +69,7 @@ export default function Hero() {
           ))}
         </motion.h1>
 
+        {/* SECOND LINE */}
         <motion.h1
           className="hero-title"
           initial="hidden"
@@ -78,6 +84,7 @@ export default function Hero() {
           ))}
         </motion.h1>
 
+        {/* DESCRIPTION */}
         <motion.p
           className="hero-description"
           initial={{ opacity: 0, y: 25 }}
@@ -85,7 +92,7 @@ export default function Hero() {
           viewport={{ once: false, amount: 0.4 }}
           transition={{ delay: 0.4, duration: 0.6 }}
         >
-          Reliable global logistics built for speed, clarity and scale.
+          {t("hero.description")}
         </motion.p>
       </div>
 
