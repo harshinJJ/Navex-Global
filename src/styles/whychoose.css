@@ -45,9 +45,6 @@
   border: 1px solid rgba(122, 105, 124, 0.562);
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
-
-  backdrop-filter: blur(6px);
-
   box-shadow:
     0 0 12px rgba(198, 201, 202, 0.35),
     0 0 20px rgba(235, 217, 231, 0.25);
@@ -58,8 +55,8 @@
 .next-btn:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 0 16px rgba(0, 178, 255, 0.55),
-    0 0 28px rgba(255, 0, 200, 0.38);
+    0 0 16px rgba(233, 182, 73, 0.55),
+    0 0 28px rgba(223, 160, 26, 0.38);
 }
 
 .next-btn:active {
@@ -117,33 +114,47 @@
   font-size: 14.5px;
   line-height: 1.55;
 }
-
-/* MOBILE */
 @media (max-width: 800px) {
+  .next-section {
+    padding: 20px 10%;
+  }
+
   .next-wrapper {
     flex-direction: column;
     padding: 40px;
     text-align: center;
+    position: relative;
   }
 
-  .next-left,
+  /* FULL WIDTH MAP ON TOP */
   .next-right {
+    order: -1; /* move map above text */
+    position: static; /* remove absolute position */
     width: 100%;
-  }
-
-  .next-right {
-    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
     justify-content: center;
   }
 
   .next-map {
-    max-width: 260px;
+    width: 100%;
+    max-width: none; /* remove 260px limit */
+    height: auto;
+    object-fit: cover;
+    transform: none !important; /* remove desktop shift */
+  }
+
+  /* TEXT BELOW */
+  .next-left {
+    width: 100%;
+    text-align: center;
   }
 
   .next-title {
     font-size: 30px;
   }
 }
+
 .rtl-mode .next-right {
   right: auto;
   left: 0;

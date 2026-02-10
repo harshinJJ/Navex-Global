@@ -174,18 +174,18 @@
   }
 
   .footer-news-title {
-    font-size: 17px;
+    font-size: 15px;
   }
 
   .footer-input-wrap {
     border-bottom: 1px solid #333;
-    padding-bottom: 6px;
+    padding-bottom: 9px;
     justify-content: center;
   }
 
   .footer-input-wrap input {
     text-align: center;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .footer-input-wrap button {
