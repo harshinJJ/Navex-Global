@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Work+Sans:wght@300;400;500&display=swap");
+
 .next-section {
   width: 100%;
   padding: 80px 10%;
@@ -8,7 +10,7 @@
 .next-wrapper {
   border-radius: 18px;
   padding: 50px 60px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgb(136, 135, 135);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,18 +38,32 @@
 }
 
 .next-btn {
-  padding: 12px 26px;
-  border-radius: 30px;
-  background: #fff;
-  color: #000;
-  cursor: pointer;
-  border: none;
+  padding: 12px 28px;
+  border-radius: 9px;
   font-weight: 600;
-  transition: 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(122, 105, 124, 0.562);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 0 12px rgba(198, 201, 202, 0.35),
+    0 0 20px rgba(235, 217, 231, 0.25);
+
+  transition: 0.25s ease;
 }
 
 .next-btn:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 16px rgba(0, 178, 255, 0.55),
+    0 0 28px rgba(255, 0, 200, 0.38);
+}
+
+.next-btn:active {
+  transform: scale(0.97);
 }
 
 .next-right {
@@ -127,4 +143,17 @@
   .next-title {
     font-size: 30px;
   }
+}
+.rtl-mode .next-right {
+  right: auto;
+  left: 0;
+}
+
+.rtl-mode .next-left {
+  margin-left: auto;
+  text-align: right;
+}
+
+.rtl-mode .next-map {
+  transform: translateX(-20px) scaleX(-1);
 }

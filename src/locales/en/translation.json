@@ -89,5 +89,42 @@
         "desc": "Full customs clearance and door-delivery support to ensure smooth, compliant and delay-free shipment processing."
       }
     }
+  },
+  "why": {
+    "heading1": "Ready To Get Started?",
+    "heading2": "Let's Talk Today",
+    "subtext": "We make everything simple, fast, and reliable for businesses of all sizes.",
+
+    "fastTitle": "FAST DELIVERY",
+    "fastDesc": "Association with us promises a faster delivery of your cargo via sea, air, and road.",
+
+    "supportTitle": "24 / 7 SUPPORT",
+    "supportDesc": "Our throughout support helps customers track their orders and information.",
+
+    "securedTitle": "SECURED SERVICES",
+    "securedDesc": "We ensure the transportation services we offer are highly secured and professional.",
+
+    "affordableTitle": "AFFORDABLE PRICE",
+    "affordableDesc": "Our cost-effective logistics solutions help you realize your transportation needs."
+  },
+
+  "common": {
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "brand": "Navex Global",
+    "copy": "© 2026 Navex Global. All Rights Reserved.",
+    "tagline": "Built with passion — logistics made simple.",
+    "subscribeTitle": "Subscribe to our newsletter",
+    "emailPlaceholder": "Your Email",
+    "submit": "Submit"
+  },
+
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "solutions": "Solutions",
+    "contact": "Contact"
   }
 }

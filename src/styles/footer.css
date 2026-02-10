@@ -59,7 +59,7 @@
   margin: 40px 0;
   border: none;
   height: 1px;
-  background: #222;
+  background: rgb(136, 135, 135);
 }
 
 .footer-bottom {
@@ -121,7 +121,6 @@
   transform: translateY(-2px);
 }
 
-/* MOBILE */
 @media (max-width: 850px) {
   .footer-section {
     padding: 10px 5% 40px;
@@ -154,7 +153,7 @@
   .footer-bottom {
     flex-direction: column;
     text-align: center;
-    align-items: center; /* centers children */
+    align-items: center;
     gap: 30px;
   }
 
@@ -162,7 +161,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* centers left content horizontally */
+    align-items: center;
   }
   .footer-left p,
   .footer-small {
