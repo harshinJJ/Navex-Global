@@ -10,7 +10,7 @@ import img5 from "../../assets/services/img5.jpg";
 import img6 from "../../assets/services/img6.jpg";
 
 export default function Services() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("home");
 
   return (
     <section id="services" className="services-section">

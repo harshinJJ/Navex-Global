@@ -6,7 +6,7 @@ import "./../styles/header.css";
 export default function Header() {
   const [showHeader, setShowHeader] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("header");
 
   useEffect(() => {
     const handleScroll = () => {

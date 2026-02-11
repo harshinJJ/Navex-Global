@@ -4,9 +4,8 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 
 export default function Footer() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("footer");
 
-  // Reusable fade-up animation
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },

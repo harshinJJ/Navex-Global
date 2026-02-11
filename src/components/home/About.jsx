@@ -9,7 +9,7 @@ const fadeUp = {
 };
 
 export default function About() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("home");
 
   return (
     <section

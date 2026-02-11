@@ -5,7 +5,7 @@ import worldMap from "../../assets/whychoose/world-dark-lines.png";
 import { useRef } from "react";
 
 export default function WhyChoose() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation("home");
   const sectionRef = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -14,7 +14,6 @@ export default function WhyChoose() {
   });
 
   const mapX = useTransform(scrollYProgress, [0, 1], [80, -80]);
-
   const textY = useTransform(scrollYProgress, [0, 1], [50, -50]);
   const textOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
@@ -30,7 +29,8 @@ export default function WhyChoose() {
         >
           <motion.h2 className="next-title">
             {t("why.heading1")}
-            <br /> {t("why.heading2")}
+            <br />
+            <span>{t("why.heading2")}</span>
           </motion.h2>
 
           <motion.p className="next-sub">{t("why.subtext")}</motion.p>

@@ -113,9 +113,6 @@
 .scroll-link {
   text-decoration: none;
 }
-/* ===========================
-   LARGE SCREENS (default)
-=========================== */
 
 @media (max-width: 1400px) {
   .hero-description {
@@ -139,9 +136,6 @@
   }
 }
 
-/* ===========================
-   TABLETS (max-width: 1024px)
-=========================== */
 @media (max-width: 1034px) {
   .hero-center-content {
     margin-top: -90px;
@@ -176,9 +170,6 @@
   }
 }
 
-/* ===========================
-   MOBILE (max-width: 768px)
-=========================== */
 @media (max-width: 768px) {
   .hero-center-content {
     margin-top: -90px;
@@ -214,9 +205,6 @@
   }
 }
 
-/* ===========================
-   SMALL MOBILE (max-width: 480px)
-=========================== */
 @media (max-width: 480px) {
   .hero-title {
     font-size: 2.3rem;

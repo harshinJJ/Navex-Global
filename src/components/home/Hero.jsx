@@ -4,10 +4,10 @@ import "../../styles/hero.css";
 import logo from "../../assets/Home/Navex-global.png";
 
 export default function Hero() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("home");
 
-  const line1 = t("hero.line1"); // "Where Every Move"
-  const line2 = t("hero.line2"); // "Matters."
+  const line1 = t("hero.line1");
+  const line2 = t("hero.line2");
 
   const splitLetters = (text) => text.split("");
 

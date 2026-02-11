@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import "../../styles/intro.css";
 
 export default function Intro() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("home");
 
   return (
     <section id="intro" className="intro-section">

@@ -25,6 +25,17 @@
 }
 
 .next-title {
+  color: #fff;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.next-title span {
+  color: rgba(248, 191, 127);
+}
+
+.next-title {
   font-size: 38px;
   font-weight: 600;
   line-height: 1.3;
@@ -48,7 +59,6 @@
   box-shadow:
     0 0 12px rgba(198, 201, 202, 0.35),
     0 0 20px rgba(235, 217, 231, 0.25);
-
   transition: 0.25s ease;
 }
 
@@ -74,6 +84,7 @@
   align-items: center;
   pointer-events: none;
 }
+
 .next-map {
   height: 140%;
   width: auto;
@@ -114,6 +125,7 @@
   font-size: 14.5px;
   line-height: 1.55;
 }
+
 @media (max-width: 800px) {
   .next-section {
     padding: 20px 10%;
@@ -126,10 +138,9 @@
     position: relative;
   }
 
-  /* FULL WIDTH MAP ON TOP */
   .next-right {
-    order: -1; /* move map above text */
-    position: static; /* remove absolute position */
+    order: -1;
+    position: static;
     width: 100%;
     margin-bottom: 25px;
     display: flex;
@@ -138,13 +149,12 @@
 
   .next-map {
     width: 100%;
-    max-width: none; /* remove 260px limit */
+    max-width: none;
     height: auto;
     object-fit: cover;
-    transform: none !important; /* remove desktop shift */
+    transform: none !important;
   }
 
-  /* TEXT BELOW */
   .next-left {
     width: 100%;
     text-align: center;

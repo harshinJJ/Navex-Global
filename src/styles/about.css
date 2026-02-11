@@ -130,9 +130,7 @@
 
   font-size: 16px;
 }
-/* -------------------------- */
-/* TABLET RESPONSIVE (1025px) */
-/* -------------------------- */
+
 @media (max-width: 1025px) {
   .brand-layout {
     flex-direction: column;
@@ -169,9 +167,6 @@
   }
 }
 
-/* -------------------------- */
-/* MOBILE RESPONSIVE (600px)  */
-/* -------------------------- */
 @media (max-width: 600px) {
   .brand-section {
     background-image: url("../assets/about/aboutph.png") !important;
