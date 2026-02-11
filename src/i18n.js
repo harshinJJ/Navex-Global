@@ -6,11 +6,13 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import enHome from "./locales/en/home/translation.json";
 import enHeader from "./locales/en/header/translation.json";
 import enFooter from "./locales/en/footer/translation.json";
+import enAboutPage from "./locales/en/aboutPage/translation.json";
 
 // AR FILES
 import arHome from "./locales/ar/home/translation.json";
 import arHeader from "./locales/ar/header/translation.json";
 import arFooter from "./locales/ar/footer/translation.json";
+import arAboutPage from "./locales/ar/aboutPage/translation.json";
 
 i18n
   .use(LanguageDetector)
@@ -21,11 +23,13 @@ i18n
         home: enHome,
         header: enHeader,
         footer: enFooter,
+        aboutPage: enAboutPage,
       },
       ar: {
         home: arHome,
         header: arHeader,
         footer: arFooter,
+        aboutPage: arAboutPage,
       },
     },
     fallbackLng: "en",

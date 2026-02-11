@@ -1,0 +1,38 @@
+{
+  "title": "About Navex Global",
+  "subtitle": "Logistics solutions designed for a connected world.",
+
+  "who": {
+    "title": "Who We Are",
+    "text": "Navex Global is a modern logistics and freight forwarding company focused on moving goods across borders with accuracy, transparency and speed."
+  },
+
+  "different": {
+    "title": "What Makes Us Different",
+    "text": "We simplify international shipping by combining global reach, strong operational processes and advanced technology."
+  },
+
+  "strengths": {
+    "global": {
+      "title": "Global Freight Expertise",
+      "text": "We manage air, sea and land shipments across major global routes with speed and reliability."
+    },
+    "tech": {
+      "title": "Smart Supply Chain Systems",
+      "text": "Technology-driven tools enhance tracking, optimization and end-to-end visibility."
+    },
+    "support": {
+      "title": "Reliable Customer Support",
+      "text": "Our specialists offer dedicated communication and fast issue resolution."
+    },
+    "safety": {
+      "title": "Compliance & Safety",
+      "text": "Every shipment follows global standards, customs protocols and safety guidelines."
+    }
+  },
+
+  "future": {
+    "title": "Looking Ahead",
+    "text": "We are building smarter systems and stronger networks to redefine global logistics."
+  }
+}

@@ -1,0 +1,142 @@
+.about-wrapper {
+  background: #0c0c0c;
+  color: #e8e8e8;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.about-hero {
+  padding: 200px 20px 200px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.about-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.55) 40%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.about-title {
+  position: relative;
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+.about-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.about-card {
+  background: #151515;
+  padding: 40px 30px;
+  border-radius: 14px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  max-width: 850px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.about-card h2 {
+  color: #f8bf7f;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.about-card p {
+  color: #d2d2d2;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.strengths-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.strength-box {
+  background: #151515;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  transition: 0.3s ease;
+}
+
+.strength-box:hover {
+  transform: translateY(-5px);
+  border-color: #f8bf7f;
+  box-shadow: 0 0 12px rgba(248, 191, 127, 0.2);
+}
+
+.strength-box h3 {
+  color: #f8bf7f;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.strength-box p {
+  color: #d2d2d2;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.future-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.future-card {
+  background: #1a1a1a;
+  padding: 45px 35px;
+  border-radius: 14px;
+  max-width: 900px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.future-card h2 {
+  color: #f8bf7f;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.future-card p {
+  color: #d2d2d2;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.4rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-card,
+  .future-card {
+    padding: 30px 20px;
+  }
+}
