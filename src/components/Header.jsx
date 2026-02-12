@@ -7,19 +7,21 @@ import "./../styles/header.css";
 export default function Header() {
   const [showHeader, setShowHeader] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileDropdown, setMobileDropdown] = useState(null);
 
+  const toggleMobileDropdown = (name) => {
+    setMobileDropdown(mobileDropdown === name ? null : name);
+  };
   const { t, i18n } = useTranslation("header");
   const navigate = useNavigate();
   const location = useLocation();
 
   const isHome = location.pathname === "/" || location.pathname === "/ar";
-  const current = location.pathname;
 
   const changeLang = (lang) => {
     const currentPath = window.location.pathname;
 
     i18n.changeLanguage(lang);
-    localStorage.setItem("lang", lang);
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
     let newPath = currentPath;
@@ -36,6 +38,7 @@ export default function Header() {
     }
 
     navigate(newPath);
+    setMenuOpen(false);
   };
 
   useEffect(() => {
@@ -44,11 +47,9 @@ export default function Header() {
     if (currentPath.startsWith("/ar")) {
       i18n.changeLanguage("ar");
       document.documentElement.dir = "rtl";
-      localStorage.setItem("lang", "ar");
     } else {
       i18n.changeLanguage("en");
       document.documentElement.dir = "ltr";
-      localStorage.setItem("lang", "en");
     }
   }, []);
 
@@ -56,11 +57,8 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isHome) {
-        setShowHeader(window.scrollY > 80);
-      } else {
-        setShowHeader(true);
-      }
+      if (isHome) setShowHeader(window.scrollY > 80);
+      else setShowHeader(true);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -80,195 +78,69 @@ export default function Header() {
           <span className="logo-text">{t("header.logo")}</span>
         </div>
 
-        {/* CENTER NAV */}
-        <nav className={`center-nav ${menuOpen ? "open" : ""}`}>
+        {/* DESKTOP NAV */}
+        {/* DESKTOP NAV */}
+        <nav className="center-nav desktop-nav">
           <div className="center-nav-inner">
-            {/* HOME */}
-            <Link
-              className={`center-nav-item ${
-                current === "/" || current === "/ar" ? "active" : ""
-              }`}
-              to={`${langPrefix}/`}
-            >
+            <Link className="center-nav-item" to={`${langPrefix}/`}>
               Home
             </Link>
 
             {/* ABOUT */}
             <div className="dropdown">
-              <span
-                className={`center-nav-item dropdown-title ${
-                  current.includes("about") || current.includes("our-team")
-                    ? "active"
-                    : ""
-                }`}
-              >
+              <span className="center-nav-item dropdown-title">
                 About <span className="arrow">▼</span>
               </span>
               <div className="dropdown-menu">
-                <Link
-                  className={current.includes("about") ? "submenu-active" : ""}
-                  to={`${langPrefix}/about`}
-                >
-                  About Us
-                </Link>
-
-                <Link
-                  className={
-                    current.includes("our-team") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/our-team`}
-                >
-                  Our Team
-                </Link>
+                <Link to={`${langPrefix}/about`}>About Us</Link>
+                <Link to={`${langPrefix}/our-team`}>Our Team</Link>
               </div>
             </div>
 
             {/* FREIGHT FORWARDING */}
             <div className="dropdown">
-              <span
-                className={`center-nav-item dropdown-title ${
-                  current.includes("freight") ||
-                  current.includes("air") ||
-                  current.includes("ocean") ||
-                  current.includes("road") ||
-                  current.includes("sea-air") ||
-                  current.includes("international")
-                    ? "active"
-                    : ""
-                }`}
-              >
+              <span className="center-nav-item dropdown-title">
                 Freight Forwarding <span className="arrow">▼</span>
               </span>
-
               <div className="dropdown-menu">
-                <Link
-                  className={
-                    current.includes("air-freight") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/air-freight`}
-                >
-                  Air Freight
-                </Link>
-                <Link
-                  className={
-                    current.includes("ocean-freight") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/ocean-freight`}
-                >
-                  Ocean Freight
-                </Link>
-                <Link
-                  className={
-                    current.includes("road-freight") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/road-freight`}
-                >
-                  Road Freight
-                </Link>
-                <Link
-                  className={
-                    current.includes("international") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/international-freight`}
-                >
+                <Link to={`${langPrefix}/air-freight`}>Air Freight</Link>
+                <Link to={`${langPrefix}/ocean-freight`}>Ocean Freight</Link>
+                <Link to={`${langPrefix}/road-freight`}>Road Freight</Link>
+                <Link to={`${langPrefix}/international-freight`}>
                   International Freight Forwarding
                 </Link>
-                <Link
-                  className={
-                    current.includes("sea-air") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/sea-air`}
-                >
-                  Sea-Air Freight
-                </Link>
+                <Link to={`${langPrefix}/sea-air`}>Sea-Air Freight</Link>
               </div>
             </div>
 
             {/* OTHER SERVICES */}
             <div className="dropdown">
-              <span
-                className={`center-nav-item dropdown-title ${
-                  current.includes("liner") ||
-                  current.includes("customs") ||
-                  current.includes("warehouse") ||
-                  current.includes("project") ||
-                  current.includes("transport") ||
-                  current.includes("console") ||
-                  current.includes("value") ||
-                  current.includes("coastal")
-                    ? "active"
-                    : ""
-                }`}
-              >
+              <span className="center-nav-item dropdown-title">
                 Other Services <span className="arrow">▼</span>
               </span>
 
               <div className="dropdown-menu">
-                <Link
-                  className={current.includes("liner") ? "submenu-active" : ""}
-                  to={`${langPrefix}/liner-shipping`}
-                >
-                  Liner Shipping
-                </Link>
+                <Link to={`${langPrefix}/liner-shipping`}>Liner Shipping</Link>
 
-                <Link
-                  className={
-                    current.includes("customs") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/customs-clearance`}
-                >
+                <Link to={`${langPrefix}/customs-clearance`}>
                   Customs Clearance
                 </Link>
 
-                <Link
-                  className={
-                    current.includes("warehouse") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/warehouse-3pl`}
-                >
-                  Warehouse & 3PL
-                </Link>
+                <Link to={`${langPrefix}/warehouse-3pl`}>Warehouse & 3PL</Link>
 
-                <Link
-                  className={
-                    current.includes("project") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/project-logistics`}
-                >
+                <Link to={`${langPrefix}/project-logistics`}>
                   Project Logistics
                 </Link>
 
-                <Link
-                  className={
-                    current.includes("transport") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/transportation`}
-                >
-                  Transportation
-                </Link>
+                <Link to={`${langPrefix}/transportation`}>Transportation</Link>
 
-                <Link
-                  className={
-                    current.includes("console") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/buyers-console`}
-                >
-                  Buyer’s Consol
-                </Link>
+                <Link to={`${langPrefix}/buyers-console`}>Buyer’s Consol</Link>
 
-                <Link
-                  className={current.includes("value") ? "submenu-active" : ""}
-                  to={`${langPrefix}/value-added`}
-                >
+                <Link to={`${langPrefix}/value-added`}>
                   Value Added Services
                 </Link>
 
-                <Link
-                  className={
-                    current.includes("coastal") ? "submenu-active" : ""
-                  }
-                  to={`${langPrefix}/coastal-shipping`}
-                >
+                <Link to={`${langPrefix}/coastal-shipping`}>
                   Coastal Shipping
                 </Link>
               </div>
@@ -276,7 +148,7 @@ export default function Header() {
           </div>
         </nav>
 
-        {/* RIGHT SIDE */}
+        {/* DESKTOP RIGHT SIDE */}
         <div className="right-actions">
           <Link className="contact-btn" to={`${langPrefix}/contact`}>
             Contact Us
@@ -289,23 +161,164 @@ export default function Header() {
             </div>
 
             <div className="lang-menu">
-              <span
-                onClick={() => changeLang("en")}
-                className={i18n.language === "en" ? "active" : ""}
-              >
-                English
-              </span>
-              <span
-                onClick={() => changeLang("ar")}
-                className={i18n.language === "ar" ? "active" : ""}
-              >
-                العربية
-              </span>
+              <span onClick={() => changeLang("en")}>English</span>
+              <span onClick={() => changeLang("ar")}>العربية</span>
             </div>
           </div>
         </div>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE MENU PANEL */}
+        <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
+          <Link to={`${langPrefix}/`} onClick={() => setMenuOpen(false)}>
+            Home
+          </Link>
+
+          {/* ABOUT */}
+          <div className="mobile-dropdown">
+            <div
+              className="mobile-dropdown-title"
+              onClick={() => toggleMobileDropdown("about")}
+            >
+              About <span className="arrow">▼</span>
+            </div>
+
+            {mobileDropdown === "about" && (
+              <div className="mobile-submenu">
+                <Link
+                  to={`${langPrefix}/about`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  About Us
+                </Link>
+                <Link
+                  to={`${langPrefix}/our-team`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Our Team
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* FREIGHT */}
+          <div className="mobile-dropdown">
+            <div
+              className="mobile-dropdown-title"
+              onClick={() => toggleMobileDropdown("freight")}
+            >
+              Freight Forwarding <span className="arrow">▼</span>
+            </div>
+
+            {mobileDropdown === "freight" && (
+              <div className="mobile-submenu">
+                <Link
+                  to={`${langPrefix}/air-freight`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Air Freight
+                </Link>
+                <Link
+                  to={`${langPrefix}/ocean-freight`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Ocean Freight
+                </Link>
+                <Link
+                  to={`${langPrefix}/road-freight`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Road Freight
+                </Link>
+                <Link
+                  to={`${langPrefix}/international-freight`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  International Freight
+                </Link>
+                <Link
+                  to={`${langPrefix}/sea-air`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Sea-Air Freight
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* OTHER SERVICES */}
+          <div className="mobile-dropdown">
+            <div
+              className="mobile-dropdown-title"
+              onClick={() => toggleMobileDropdown("services")}
+            >
+              Other Services <span className="arrow">▼</span>
+            </div>
+
+            {mobileDropdown === "services" && (
+              <div className="mobile-submenu">
+                <Link
+                  to={`${langPrefix}/liner-shipping`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Liner Shipping
+                </Link>
+                <Link
+                  to={`${langPrefix}/customs-clearance`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Customs Clearance
+                </Link>
+                <Link
+                  to={`${langPrefix}/warehouse-3pl`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Warehouse & 3PL
+                </Link>
+                <Link
+                  to={`${langPrefix}/project-logistics`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Project Logistics
+                </Link>
+                <Link
+                  to={`${langPrefix}/transportation`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Transportation
+                </Link>
+                <Link
+                  to={`${langPrefix}/buyers-console`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Buyer’s Consol
+                </Link>
+                <Link
+                  to={`${langPrefix}/value-added`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Value Added Services
+                </Link>
+                <Link
+                  to={`${langPrefix}/coastal-shipping`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Coastal Shipping
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link to={`${langPrefix}/contact`} onClick={() => setMenuOpen(false)}>
+            Contact Us
+          </Link>
+
+          <div className="mobile-language">
+            <span onClick={() => changeLang("en")}>English</span>
+            <span onClick={() => changeLang("ar")}>العربية</span>
+          </div>
+        </div>
+
+        {/* HAMBURGER */}
         <div
           className={`hamburger ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen(!menuOpen)}
