@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import "../../styles/whychoose.css";
+import "../../styles/home/whychoose.css";
 import worldMap from "../../assets/whychoose/world-dark-lines.png";
 import { useRef } from "react";
 

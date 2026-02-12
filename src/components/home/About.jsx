@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import "../../styles/about.css";
+import "../../styles/home/about.css";
 import bg from "../../assets/about/about.jpg";
 
 const fadeUp = {

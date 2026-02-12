@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import "../../styles/intro.css";
+import "../../styles/home/intro.css";
 
 export default function Intro() {
   const { t } = useTranslation("home");

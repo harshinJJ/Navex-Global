@@ -1,4 +1,4 @@
-import "../../styles/services.css";
+import "../../styles/home/services.css";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 

@@ -169,7 +169,7 @@
 
 @media (max-width: 600px) {
   .brand-section {
-    background-image: url("../assets/about/aboutph.png") !important;
+    background-image: url("/src/assets/about/aboutph.png") !important;
     background-size: cover;
     background-position: center;
   }

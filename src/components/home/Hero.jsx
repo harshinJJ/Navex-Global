@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import "../../styles/hero.css";
+import "../../styles/home/hero.css";
 import logo from "../../assets/Home/Navex-global.png";
 
 export default function Hero() {

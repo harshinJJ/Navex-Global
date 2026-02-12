@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  background-image: url("./../assets/Home/Homebg.png");
+  background-image: url("/src/assets/Home/Homebg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -145,7 +145,7 @@
   }
   .hero-section {
     height: 100vh;
-    background-image: url("./../assets/Home/homebg2.png");
+    background-image: url("/src/assets/Home/homebg2.png");
     background-size: 100% 100%;
   }
   .hero-description {
@@ -180,7 +180,7 @@
   }
   .hero-section {
     height: 100vh;
-    background-image: url("./../assets/Home/homebg2.png");
+    background-image: url("/src/assets/Home/homebg2.png");
     background-size: 140% 100%;
   }
   .hero-company {

@@ -1,38 +1,25 @@
 {
-  "title": "About Navex Global",
+  "title": "About Us",
   "subtitle": "Logistics solutions designed for a connected world.",
 
-  "who": {
-    "title": "Who We Are",
-    "text": "Navex Global is a modern logistics and freight forwarding company focused on moving goods across borders with accuracy, transparency and speed."
-  },
+  "whoTag": "WHO WE ARE",
+  "whoTitle": "Delivering Global Logistics Excellence",
 
-  "different": {
-    "title": "What Makes Us Different",
-    "text": "We simplify international shipping by combining global reach, strong operational processes and advanced technology."
-  },
+  "block1Title": "Global Freight Expertise",
+  "block1Desc": "Reliable sea, air and road freight solutions across global trade routes.",
 
-  "strengths": {
-    "global": {
-      "title": "Global Freight Expertise",
-      "text": "We manage air, sea and land shipments across major global routes with speed and reliability."
-    },
-    "tech": {
-      "title": "Smart Supply Chain Systems",
-      "text": "Technology-driven tools enhance tracking, optimization and end-to-end visibility."
-    },
-    "support": {
-      "title": "Reliable Customer Support",
-      "text": "Our specialists offer dedicated communication and fast issue resolution."
-    },
-    "safety": {
-      "title": "Compliance & Safety",
-      "text": "Every shipment follows global standards, customs protocols and safety guidelines."
-    }
-  },
+  "block2Title": "Integrated Supply Chain Solutions",
+  "block2Desc": "Complete logistics support including customs, warehousing and 3PL.",
 
-  "future": {
-    "title": "Looking Ahead",
-    "text": "We are building smarter systems and stronger networks to redefine global logistics."
-  }
+  "block3Title": "Customer-Driven Operations",
+  "block3Desc": "Client-focused operations built on precision, speed and trust.",
+  "performanceTitle": "Operational Performance Overview",
+  "performanceDesc": "Delivering precision, speed, and reliability across every stage of the global supply chain. Our performance metrics reflect our commitment to operational excellence and customer satisfaction.",
+
+  "metric1": "On-Time Delivery Performance",
+  "metric2": "Global Trade Route Coverage",
+  "metric3": "Customs Processing Efficiency",
+  "metric4": "Cargo Handling Accuracy",
+  "metric5": "Warehouse Inventory Precision",
+  "metric6": "Customer Satisfaction Index"
 }

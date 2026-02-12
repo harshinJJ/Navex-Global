@@ -217,8 +217,95 @@
 .mobile-menu {
   display: none;
 }
+@media (max-width: 1400px) {
+  .nav-container {
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .center-nav-inner {
+    gap: 25px;
+    padding: 8px 20px;
+  }
+
+  .center-nav-item {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+
+  .contact-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1034px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+
+  .center-nav-inner {
+    gap: 18px;
+    padding: 6px 15px;
+  }
+
+  .center-nav-item {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .contact-btn {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+}
+/* ============================= */
+/* iPad Fix (No Hamburger) */
+/* ============================= */
 
 @media (max-width: 900px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+
+  .center-nav-inner {
+    gap: 12px;
+    padding: 6px 12px;
+  }
+
+  .center-nav-item {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .logo-text {
+    font-size: 16px;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .contact-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .lang-trigger {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .right-actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 768px) {
   .desktop-nav,
   .right-actions {
     display: none;

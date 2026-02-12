@@ -1,4 +1,4 @@
-import "./../styles/footer.css";
+import "../../styles/footer.css";
 import { FiFacebook, FiInstagram, FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
