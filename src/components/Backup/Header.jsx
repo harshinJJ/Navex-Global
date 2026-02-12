@@ -199,8 +199,6 @@ export default function Header() {
               </div>
             )}
           </div>
-
-          {/* FREIGHT */}
           <div className="mobile-dropdown">
             <div
               className="mobile-dropdown-title"

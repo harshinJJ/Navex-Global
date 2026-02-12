@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function MobileMenu({
   menuOpen,
@@ -8,41 +9,45 @@ export default function MobileMenu({
   langPrefix,
   changeLang,
 }) {
+  const { t, i18n } = useTranslation("header");
+
   return (
     <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
       <Link to={`${langPrefix}/`} onClick={() => setMenuOpen(false)}>
-        Home
+        {t("home")}
       </Link>
 
+      {/* ABOUT */}
       <div className="mobile-dropdown">
         <div
           className="mobile-dropdown-title"
           onClick={() => toggleMobileDropdown("about")}
         >
-          About ▼
+          {t("about")} ▼
         </div>
 
         {mobileDropdown === "about" && (
           <div className="mobile-submenu">
             <Link to={`${langPrefix}/about`} onClick={() => setMenuOpen(false)}>
-              About Us
+              {t("aboutUs")}
             </Link>
             <Link
               to={`${langPrefix}/our-team`}
               onClick={() => setMenuOpen(false)}
             >
-              Our Team
+              {t("ourTeam")}
             </Link>
           </div>
         )}
       </div>
 
+      {/* FREIGHT */}
       <div className="mobile-dropdown">
         <div
           className="mobile-dropdown-title"
           onClick={() => toggleMobileDropdown("freight")}
         >
-          Freight Forwarding ▼
+          {t("freight")} ▼
         </div>
 
         {mobileDropdown === "freight" && (
@@ -51,42 +56,43 @@ export default function MobileMenu({
               to={`${langPrefix}/air-freight`}
               onClick={() => setMenuOpen(false)}
             >
-              Air Freight
+              {t("air")}
             </Link>
             <Link
               to={`${langPrefix}/ocean-freight`}
               onClick={() => setMenuOpen(false)}
             >
-              Ocean Freight
+              {t("ocean")}
             </Link>
             <Link
               to={`${langPrefix}/road-freight`}
               onClick={() => setMenuOpen(false)}
             >
-              Road Freight
+              {t("road")}
             </Link>
             <Link
               to={`${langPrefix}/international-freight`}
               onClick={() => setMenuOpen(false)}
             >
-              International Freight
+              {t("international")}
             </Link>
             <Link
               to={`${langPrefix}/sea-air`}
               onClick={() => setMenuOpen(false)}
             >
-              Sea-Air Freight
+              {t("seaAir")}
             </Link>
           </div>
         )}
       </div>
 
+      {/* OTHER SERVICES */}
       <div className="mobile-dropdown">
         <div
           className="mobile-dropdown-title"
           onClick={() => toggleMobileDropdown("services")}
         >
-          Other Services ▼
+          {t("services")} ▼
         </div>
 
         {mobileDropdown === "services" && (
@@ -95,61 +101,73 @@ export default function MobileMenu({
               to={`${langPrefix}/liner-shipping`}
               onClick={() => setMenuOpen(false)}
             >
-              Liner Shipping
+              {t("liner")}
             </Link>
             <Link
               to={`${langPrefix}/customs-clearance`}
               onClick={() => setMenuOpen(false)}
             >
-              Customs Clearance
+              {t("customs")}
             </Link>
             <Link
               to={`${langPrefix}/warehouse-3pl`}
               onClick={() => setMenuOpen(false)}
             >
-              Warehouse & 3PL
+              {t("warehouse")}
             </Link>
             <Link
               to={`${langPrefix}/project-logistics`}
               onClick={() => setMenuOpen(false)}
             >
-              Project Logistics
+              {t("project")}
             </Link>
             <Link
               to={`${langPrefix}/transportation`}
               onClick={() => setMenuOpen(false)}
             >
-              Transportation
+              {t("transport")}
             </Link>
             <Link
               to={`${langPrefix}/buyers-console`}
               onClick={() => setMenuOpen(false)}
             >
-              Buyer’s Consol
+              {t("buyers")}
             </Link>
             <Link
               to={`${langPrefix}/value-added`}
               onClick={() => setMenuOpen(false)}
             >
-              Value Added Services
+              {t("value")}
             </Link>
             <Link
               to={`${langPrefix}/coastal-shipping`}
               onClick={() => setMenuOpen(false)}
             >
-              Coastal Shipping
+              {t("coastal")}
             </Link>
           </div>
         )}
       </div>
 
       <Link to={`${langPrefix}/contact`} onClick={() => setMenuOpen(false)}>
-        Contact Us
+        {t("contact")}
       </Link>
 
+      {/* LANGUAGE SWITCH */}
       <div className="mobile-language">
-        <span onClick={() => changeLang("en")}>English</span>
-        <span onClick={() => changeLang("ar")}>العربية</span>
+        <span
+          onClick={() => changeLang("en")}
+          className={i18n.language === "en" ? "active" : ""}
+        >
+          {t("english")}
+        </span>
+
+        <span
+          onClick={() => changeLang("ar")}
+          className={i18n.language === "ar" ? "active" : ""}
+        >
+          {t("arabic")}
+        </span>
       </div>
     </div>
   );

@@ -233,8 +233,8 @@
     position: fixed;
     top: 0;
     right: -100%;
-    width: 75%;
-    max-width: 350px;
+    width: 85%;
+    max-width: 280px;
     height: 100vh;
     background: #111;
     display: flex;

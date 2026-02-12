@@ -1,7 +1,7 @@
 import logo from "../../assets/Home/Navex-global.png";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 
 import DesktopNav from "./DesktopNav";
 import MobileMenu from "./MobileMenu";
@@ -29,6 +29,7 @@ export default function Header() {
     const currentPath = window.location.pathname;
 
     i18n.changeLanguage(lang);
+
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
     let newPath = currentPath;
@@ -49,6 +50,10 @@ export default function Header() {
   };
 
   useEffect(() => {
+    document.documentElement.dir = i18n.language === "ar" ? "rtl" : "ltr";
+  }, [i18n.language]);
+
+  useEffect(() => {
     const handleScroll = () => {
       if (isHome) setShowHeader(window.scrollY > 80);
       else setShowHeader(true);
@@ -56,6 +61,7 @@ export default function Header() {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
@@ -64,24 +70,28 @@ export default function Header() {
   return (
     <header className={`nav-header ${showHeader ? "visible" : ""}`}>
       <div className="nav-container">
+        {/* LOGO */}
         <div
           className="logo-wrapper"
           onClick={() => navigate(`${langPrefix}/`)}
         >
           <img src={logo} alt="Navex Logo" className="logo-img" />
-          <span className="logo-text">{t("header.logo")}</span>
+          <span className="logo-text">{t("logo")}</span>
         </div>
 
+        {/* DESKTOP NAV */}
         <DesktopNav langPrefix={langPrefix} />
 
+        {/* DESKTOP RIGHT SIDE */}
         <div className="right-actions">
-          <a className="contact-btn" href={`${langPrefix}/contact`}>
-            Contact Us
-          </a>
+          <Link className="contact-btn" to={`${langPrefix}/contact`}>
+            {t("contact")}
+          </Link>
 
           <LanguageSwitcher i18n={i18n} changeLang={changeLang} />
         </div>
 
+        {/* MOBILE MENU */}
         <MobileMenu
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
@@ -91,6 +101,7 @@ export default function Header() {
           changeLang={changeLang}
         />
 
+        {/* HAMBURGER */}
         <Hamburger open={menuOpen} toggle={() => setMenuOpen(!menuOpen)} />
       </div>
     </header>
