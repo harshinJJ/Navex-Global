@@ -65,6 +65,29 @@ export default function About_us() {
       </div>
     </motion.div>
   );
+  const cardContainer = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const cardReveal = {
+    hidden: {
+      opacity: 0,
+      y: 50,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
 
   return (
     <div className="about-wrapper">
@@ -193,9 +216,10 @@ export default function About_us() {
 
       <section className="about-team-section">
         <div className="about-team-container">
+          {/* LEFT SIDE */}
           <motion.div
             className="about-team-left"
-            variants={smoothReveal}
+            variants={cardReveal}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
@@ -210,9 +234,10 @@ export default function About_us() {
             <p className="about-team-desc">{t("team.description")}</p>
           </motion.div>
 
+          {/* RIGHT SIDE */}
           <motion.div
             className="about-team-grid"
-            variants={smoothStagger}
+            variants={cardContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
@@ -221,8 +246,11 @@ export default function About_us() {
               <motion.div
                 key={index}
                 className="about-team-card"
-                variants={smoothReveal}
-                whileHover={{ scale: 1.03 }}
+                variants={cardReveal}
+                whileHover={{
+                  y: -8,
+                  transition: { duration: 0.3 },
+                }}
               >
                 <div className="about-team-initial">{member.initial}</div>
 
