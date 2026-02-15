@@ -9,15 +9,8 @@ import { FaShip, FaBoxes, FaUsers } from "react-icons/fa";
 export default function About_us() {
   const { t } = useTranslation("aboutPage");
 
-  /* ==============================
-     ONE UNIFIED ANIMATION SYSTEM
-  ============================== */
-
   const smoothReveal = {
-    hidden: {
-      opacity: 0,
-      y: 60,
-    },
+    hidden: { opacity: 0, y: 60 },
     visible: {
       opacity: 1,
       y: 0,
@@ -37,43 +30,46 @@ export default function About_us() {
     },
   };
 
-  /* ==============================
-     PROGRESS BAR COMPONENT
-  ============================== */
+  const values = t("values.items", { returnObjects: true });
+  const metrics = t("performance.metrics", { returnObjects: true });
+  const members = t("team.members", { returnObjects: true });
 
-  const ProgressBar = ({ label, value }) => {
-    return (
-      <motion.div
-        className="progress-item"
-        variants={smoothReveal}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.4 }}
-      >
-        <div className="progress-header">
-          <span>{label}</span>
-          <span>{value}%</span>
-        </div>
+  const icons = [<FaShip />, <FaBoxes />, <FaUsers />];
 
-        <div className="progress-bar">
-          <motion.div
-            className="progress-fill"
-            initial={{ width: 0 }}
-            whileInView={{ width: `${value}%` }}
-            transition={{
-              duration: 1.5,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            viewport={{ once: false }}
-          />
-        </div>
-      </motion.div>
-    );
-  };
+  const metricValues = [98, 94, 96, 99, 97, 95];
+
+  const ProgressBar = ({ label, value }) => (
+    <motion.div
+      className="progress-item"
+      variants={smoothReveal}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.4 }}
+    >
+      <div className="progress-header">
+        <span>{label}</span>
+        <span>{value}%</span>
+      </div>
+
+      <div className="progress-bar">
+        <motion.div
+          className="progress-fill"
+          initial={{ width: 0 }}
+          whileInView={{ width: `${value}%` }}
+          transition={{
+            duration: 1.5,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          viewport={{ once: false }}
+        />
+      </div>
+    </motion.div>
+  );
 
   return (
     <div className="about-wrapper">
       {/* ================= HERO ================= */}
+
       <section
         className="about-hero"
         style={{ backgroundImage: `url(${aboutHero})` }}
@@ -85,12 +81,13 @@ export default function About_us() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.5 }}
         >
-          {t("title").split(" ")[0]}{" "}
-          <span className="highlight">{t("title").split(" ")[1]}</span>
+          {t("hero.title").split(" ")[0]}{" "}
+          <span className="highlight">{t("hero.title").split(" ")[1]}</span>
         </motion.h1>
       </section>
 
       {/* ================= VALUES ================= */}
+
       <section className="about-values-section">
         <div className="about-values-container">
           <motion.div
@@ -101,40 +98,24 @@ export default function About_us() {
             viewport={{ once: false, amount: 0.2 }}
           >
             <motion.span className="about-values-tag" variants={smoothReveal}>
-              {t("whoTag")}
+              {t("values.tag")}
             </motion.span>
 
             <motion.h2 className="about-values-title" variants={smoothReveal}>
-              {t("whoTitle")}
+              {t("values.title")}
             </motion.h2>
 
             <motion.div className="about-values-list">
-              {[
-                {
-                  icon: <FaShip />,
-                  title: t("block1Title"),
-                  desc: t("block1Desc"),
-                },
-                {
-                  icon: <FaBoxes />,
-                  title: t("block2Title"),
-                  desc: t("block2Desc"),
-                },
-                {
-                  icon: <FaUsers />,
-                  title: t("block3Title"),
-                  desc: t("block3Desc"),
-                },
-              ].map((item, index) => (
+              {values.map((item, index) => (
                 <motion.div
                   key={index}
                   className="about-values-row"
                   variants={smoothReveal}
                 >
-                  <div className="about-values-icon">{item.icon}</div>
+                  <div className="about-values-icon">{icons[index]}</div>
                   <div>
                     <h3>{item.title}</h3>
-                    <p>{item.desc}</p>
+                    <p>{item.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -154,6 +135,7 @@ export default function About_us() {
       </section>
 
       {/* ================= PERFORMANCE ================= */}
+
       <section
         className="about-performance-section"
         style={{ backgroundImage: `url(${aboutusbg})` }}
@@ -172,34 +154,43 @@ export default function About_us() {
               className="about-performance-title"
               variants={smoothReveal}
             >
-              {t("performanceTitle")}
+              {t("performance.title")}
             </motion.h2>
 
             <motion.p
               className="about-performance-desc"
               variants={smoothReveal}
             >
-              {t("performanceDesc")}
+              {t("performance.description")}
             </motion.p>
           </motion.div>
 
           <div className="about-performance-progress-wrapper">
             <div className="about-progress-column">
-              <ProgressBar label={t("metric1")} value={98} />
-              <ProgressBar label={t("metric2")} value={94} />
-              <ProgressBar label={t("metric3")} value={96} />
+              {metrics.slice(0, 3).map((metric, index) => (
+                <ProgressBar
+                  key={index}
+                  label={metric}
+                  value={metricValues[index]}
+                />
+              ))}
             </div>
 
             <div className="about-progress-column">
-              <ProgressBar label={t("metric4")} value={99} />
-              <ProgressBar label={t("metric5")} value={97} />
-              <ProgressBar label={t("metric6")} value={95} />
+              {metrics.slice(3, 6).map((metric, index) => (
+                <ProgressBar
+                  key={index}
+                  label={metric}
+                  value={metricValues[index + 3]}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ================= TEAM ================= */}
+
       <section className="about-team-section">
         <div className="about-team-container">
           <motion.div
@@ -209,16 +200,14 @@ export default function About_us() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
           >
-            <span className="about-team-tag">OUR TEAM</span>
+            <span className="about-team-tag">{t("team.tag")}</span>
 
             <h2 className="about-team-title">
-              Meet With <br /> Expert Team
+              {t("team.titleLine1")} <br />
+              {t("team.titleLine2")}
             </h2>
 
-            <p className="about-team-desc">
-              Our leadership team brings deep industry knowledge, operational
-              precision, and global logistics expertise.
-            </p>
+            <p className="about-team-desc">{t("team.description")}</p>
           </motion.div>
 
           <motion.div
@@ -228,12 +217,7 @@ export default function About_us() {
             whileInView="visible"
             viewport={{ once: false, amount: 0.2 }}
           >
-            {[
-              { initial: "AF", name: "Abu Falah", role: "Operations Director" },
-              { initial: "BA", name: "Badr", role: "Supply Chain Manager" },
-              { initial: "AS", name: "Ashiq", role: "Logistics Coordinator" },
-              { initial: "SH", name: "Shahin", role: "IT Support" },
-            ].map((member, index) => (
+            {members.map((member, index) => (
               <motion.div
                 key={index}
                 className="about-team-card"

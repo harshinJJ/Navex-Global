@@ -18,28 +18,13 @@ export default function MobileMenu({
       </Link>
 
       {/* ABOUT */}
-      <div className="mobile-dropdown">
-        <div
-          className="mobile-dropdown-title"
-          onClick={() => toggleMobileDropdown("about")}
-        >
-          {t("about")} ▼
-        </div>
-
-        {mobileDropdown === "about" && (
-          <div className="mobile-submenu">
-            <Link to={`${langPrefix}/about`} onClick={() => setMenuOpen(false)}>
-              {t("aboutUs")}
-            </Link>
-            <Link
-              to={`${langPrefix}/our-team`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("ourTeam")}
-            </Link>
-          </div>
-        )}
-      </div>
+      <Link
+        to={`${langPrefix}/about`}
+        className="mobile-nav-item"
+        onClick={() => setMenuOpen(false)}
+      >
+        {t("aboutUs")}
+      </Link>
 
       {/* FREIGHT */}
       <div className="mobile-dropdown">

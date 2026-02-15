@@ -12,6 +12,7 @@ import "../../styles/header.css";
 
 export default function Header() {
   const [showHeader, setShowHeader] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [mobileDropdown, setMobileDropdown] = useState(null);
 
@@ -29,7 +30,6 @@ export default function Header() {
     const currentPath = window.location.pathname;
 
     i18n.changeLanguage(lang);
-
     document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
 
     let newPath = currentPath;
@@ -55,8 +55,17 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (isHome) setShowHeader(window.scrollY > 80);
-      else setShowHeader(true);
+      const scrollY = window.scrollY;
+
+      // HOME PAGE
+      if (isHome) {
+        setShowHeader(scrollY > 80); // hide at top
+      } else {
+        setShowHeader(true); // always visible
+      }
+
+      // Background control
+      setScrolled(scrollY > 80);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -68,9 +77,12 @@ export default function Header() {
   const langPrefix = i18n.language === "ar" ? "/ar" : "";
 
   return (
-    <header className={`nav-header ${showHeader ? "visible" : ""}`}>
+    <header
+      className={`nav-header 
+      ${showHeader ? "visible" : ""} 
+      ${scrolled ? "scrolled" : ""}`}
+    >
       <div className="nav-container">
-        {/* LOGO */}
         <div
           className="logo-wrapper"
           onClick={() => navigate(`${langPrefix}/`)}
@@ -79,10 +91,8 @@ export default function Header() {
           <span className="logo-text">{t("logo")}</span>
         </div>
 
-        {/* DESKTOP NAV */}
         <DesktopNav langPrefix={langPrefix} />
 
-        {/* DESKTOP RIGHT SIDE */}
         <div className="right-actions">
           <Link className="contact-btn" to={`${langPrefix}/contact`}>
             {t("contact")}
@@ -91,7 +101,6 @@ export default function Header() {
           <LanguageSwitcher i18n={i18n} changeLang={changeLang} />
         </div>
 
-        {/* MOBILE MENU */}
         <MobileMenu
           menuOpen={menuOpen}
           setMenuOpen={setMenuOpen}
@@ -101,7 +110,6 @@ export default function Header() {
           changeLang={changeLang}
         />
 
-        {/* HAMBURGER */}
         <Hamburger open={menuOpen} toggle={() => setMenuOpen(!menuOpen)} />
       </div>
     </header>

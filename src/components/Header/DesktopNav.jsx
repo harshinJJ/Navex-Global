@@ -1,57 +1,135 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function DesktopNav({ langPrefix }) {
   const { t } = useTranslation("header");
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const isActive = (path) => currentPath === path;
+
+  const isFreightActive = [
+    "/air-freight",
+    "/ocean-freight",
+    "/road-freight",
+    "/international-freight",
+    "/sea-air",
+  ].some((route) => currentPath === `${langPrefix}${route}`);
+
+  const isServicesActive = [
+    "/liner-shipping",
+    "/customs-clearance",
+    "/warehouse-3pl",
+    "/project-logistics",
+    "/transportation",
+    "/buyers-console",
+    "/value-added",
+    "/coastal-shipping",
+  ].some((route) => currentPath === `${langPrefix}${route}`);
 
   return (
     <nav className="center-nav desktop-nav">
       <div className="center-nav-inner">
-        <Link className="center-nav-item" to={`${langPrefix}/`}>
+        <Link
+          className={`center-nav-item ${
+            isActive(`${langPrefix}/`) ? "active" : ""
+          }`}
+          to={`${langPrefix}/`}
+        >
           {t("home")}
         </Link>
 
         {/* ABOUT */}
-        <div className="dropdown">
-          <span className="center-nav-item dropdown-title">
-            {t("about")} <span className="arrow">▼</span>
-          </span>
-          <div className="dropdown-menu">
-            <Link to={`${langPrefix}/about`}>{t("aboutUs")}</Link>
-            <Link to={`${langPrefix}/our-team`}>{t("ourTeam")}</Link>
-          </div>
-        </div>
+        <Link
+          to={`${langPrefix}/about`}
+          className={`center-nav-item ${
+            isActive(`${langPrefix}/about`) ? "active" : ""
+          }`}
+        >
+          {t("aboutUs")}
+        </Link>
 
-        {/* FREIGHT FORWARDING */}
+        {/* FREIGHT */}
         <div className="dropdown">
-          <span className="center-nav-item dropdown-title">
+          <span
+            className={`center-nav-item dropdown-title ${
+              isFreightActive ? "active" : ""
+            }`}
+          >
             {t("freight")} <span className="arrow">▼</span>
           </span>
+
           <div className="dropdown-menu">
-            <Link to={`${langPrefix}/air-freight`}>{t("air")}</Link>
-            <Link to={`${langPrefix}/ocean-freight`}>{t("ocean")}</Link>
-            <Link to={`${langPrefix}/road-freight`}>{t("road")}</Link>
-            <Link to={`${langPrefix}/international-freight`}>
+            <Link
+              className={isActive(`${langPrefix}/air-freight`) ? "active" : ""}
+              to={`${langPrefix}/air-freight`}
+            >
+              {t("air")}
+            </Link>
+
+            <Link
+              className={
+                isActive(`${langPrefix}/ocean-freight`) ? "active" : ""
+              }
+              to={`${langPrefix}/ocean-freight`}
+            >
+              {t("ocean")}
+            </Link>
+
+            <Link
+              className={isActive(`${langPrefix}/road-freight`) ? "active" : ""}
+              to={`${langPrefix}/road-freight`}
+            >
+              {t("road")}
+            </Link>
+
+            <Link
+              className={
+                isActive(`${langPrefix}/international-freight`) ? "active" : ""
+              }
+              to={`${langPrefix}/international-freight`}
+            >
               {t("international")}
             </Link>
-            <Link to={`${langPrefix}/sea-air`}>{t("seaAir")}</Link>
+
+            <Link
+              className={isActive(`${langPrefix}/sea-air`) ? "active" : ""}
+              to={`${langPrefix}/sea-air`}
+            >
+              {t("seaAir")}
+            </Link>
           </div>
         </div>
 
-        {/* OTHER SERVICES */}
+        {/* SERVICES */}
         <div className="dropdown">
-          <span className="center-nav-item dropdown-title">
+          <span
+            className={`center-nav-item dropdown-title ${
+              isServicesActive ? "active" : ""
+            }`}
+          >
             {t("services")} <span className="arrow">▼</span>
           </span>
+
           <div className="dropdown-menu">
-            <Link to={`${langPrefix}/liner-shipping`}>{t("liner")}</Link>
-            <Link to={`${langPrefix}/customs-clearance`}>{t("customs")}</Link>
-            <Link to={`${langPrefix}/warehouse-3pl`}>{t("warehouse")}</Link>
-            <Link to={`${langPrefix}/project-logistics`}>{t("project")}</Link>
-            <Link to={`${langPrefix}/transportation`}>{t("transport")}</Link>
-            <Link to={`${langPrefix}/buyers-console`}>{t("buyers")}</Link>
-            <Link to={`${langPrefix}/value-added`}>{t("value")}</Link>
-            <Link to={`${langPrefix}/coastal-shipping`}>{t("coastal")}</Link>
+            {[
+              "liner-shipping",
+              "customs-clearance",
+              "warehouse-3pl",
+              "project-logistics",
+              "transportation",
+              "buyers-console",
+              "value-added",
+              "coastal-shipping",
+            ].map((route) => (
+              <Link
+                key={route}
+                className={isActive(`${langPrefix}/${route}`) ? "active" : ""}
+                to={`${langPrefix}/${route}`}
+              >
+                {t(route.replace("-", ""))}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
