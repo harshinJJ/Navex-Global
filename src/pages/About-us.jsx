@@ -10,8 +10,6 @@ import { FaShip, FaBoxes, FaUsers } from "react-icons/fa";
 export default function About_us() {
   const { t } = useTranslation("aboutPage");
 
-  /* Premium Animation Variants */
-
   const fadeUp = {
     hidden: { opacity: 0, y: 80 },
     visible: {
@@ -45,8 +43,6 @@ export default function About_us() {
       },
     },
   };
-
-  /* Animated Progress Bar Component */
 
   const ProgressBar = ({ label, value }) => {
     return (

@@ -150,16 +150,14 @@
 
 @media (max-width: 768px) {
   .about-hero {
-    padding: 140px 20px 140px;
+    padding: 120px 20px 120px;
   }
-
   .about-title {
-    font-size: 42px;
-    line-height: 1.2;
+    font-size: 32.5px;
   }
-
   .values-section {
     padding: 80px 20px;
+    text-align: center;
   }
 
   .values-container {
@@ -167,8 +165,13 @@
     gap: 60px;
   }
 
-  .values-right {
-    order: -1;
+  .values-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .values-tag {
+    margin: 0 auto;
   }
 
   .values-title {
@@ -176,8 +179,21 @@
     max-width: 100%;
   }
 
+  .values-right {
+    order: -1;
+    display: none;
+  }
+
+  .values-list {
+    width: 100%;
+    align-items: center;
+  }
+
   .values-row {
-    gap: 14px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
   }
 
   .values-icon {
@@ -194,11 +210,8 @@
     font-size: 0.9rem;
     max-width: 100%;
   }
-
-  .values-right img {
-    height: 300px;
-  }
 }
+
 .performance-section {
   position: relative;
   padding: 80px 100px;
@@ -295,6 +308,11 @@
   }
 }
 @media (max-width: 768px) {
+  .performance-title,
+  .performance-desc,
+  .progress-header {
+    text-align: center;
+  }
   .performance-section {
     padding: 0px 20px;
     background-size: cover;
