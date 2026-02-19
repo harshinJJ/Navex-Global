@@ -27,13 +27,25 @@ export default function DesktopNav({ langPrefix }) {
     "/coastal-shipping",
   ].some((route) => currentPath === `${langPrefix}${route}`);
 
+  /* ---- Correct Mapping Based on Your JSON Keys ---- */
+
+  const servicesList = [
+    { route: "liner-shipping", label: t("liner") },
+    { route: "customs-clearance", label: t("customs") },
+    { route: "warehouse-3pl", label: t("warehouse") },
+    { route: "project-logistics", label: t("project") },
+    { route: "transportation", label: t("transport") },
+    { route: "buyers-console", label: t("buyers") },
+    { route: "value-added", label: t("value") },
+    { route: "coastal-shipping", label: t("coastal") },
+  ];
+
   return (
     <nav className="center-nav desktop-nav">
       <div className="center-nav-inner">
+        {/* HOME */}
         <Link
-          className={`center-nav-item ${
-            isActive(`${langPrefix}/`) ? "active" : ""
-          }`}
+          className={`center-nav-item ${isActive(`${langPrefix}/`) ? "active" : ""}`}
           to={`${langPrefix}/`}
         >
           {t("home")}
@@ -42,9 +54,7 @@ export default function DesktopNav({ langPrefix }) {
         {/* ABOUT */}
         <Link
           to={`${langPrefix}/about`}
-          className={`center-nav-item ${
-            isActive(`${langPrefix}/about`) ? "active" : ""
-          }`}
+          className={`center-nav-item ${isActive(`${langPrefix}/about`) ? "active" : ""}`}
         >
           {t("aboutUs")}
         </Link>
@@ -52,9 +62,7 @@ export default function DesktopNav({ langPrefix }) {
         {/* FREIGHT */}
         <div className="dropdown">
           <span
-            className={`center-nav-item dropdown-title ${
-              isFreightActive ? "active" : ""
-            }`}
+            className={`center-nav-item dropdown-title ${isFreightActive ? "active" : ""}`}
           >
             {t("freight")} <span className="arrow">▼</span>
           </span>
@@ -104,30 +112,21 @@ export default function DesktopNav({ langPrefix }) {
         {/* SERVICES */}
         <div className="dropdown">
           <span
-            className={`center-nav-item dropdown-title ${
-              isServicesActive ? "active" : ""
-            }`}
+            className={`center-nav-item dropdown-title ${isServicesActive ? "active" : ""}`}
           >
             {t("services")} <span className="arrow">▼</span>
           </span>
 
           <div className="dropdown-menu">
-            {[
-              "liner-shipping",
-              "customs-clearance",
-              "warehouse-3pl",
-              "project-logistics",
-              "transportation",
-              "buyers-console",
-              "value-added",
-              "coastal-shipping",
-            ].map((route) => (
+            {servicesList.map((item) => (
               <Link
-                key={route}
-                className={isActive(`${langPrefix}/${route}`) ? "active" : ""}
-                to={`${langPrefix}/${route}`}
+                key={item.route}
+                className={
+                  isActive(`${langPrefix}/${item.route}`) ? "active" : ""
+                }
+                to={`${langPrefix}/${item.route}`}
               >
-                {t(route.replace("-", ""))}
+                {item.label}
               </Link>
             ))}
           </div>

@@ -252,6 +252,39 @@ function AirFreight() {
           </div>
         </div>
       </section>
+      <section className="offices-section">
+        <div className="offices-container">
+          {/* India */}
+          <div className="office-card">
+            <img
+              src="/images/india-lineart.png"
+              alt="India"
+              className="office-img"
+            />
+            <h3>India</h3>
+          </div>
+
+          {/* Saudi Arabia */}
+          <div className="office-card">
+            <img
+              src="/images/saudi-lineart.png"
+              alt="Saudi Arabia"
+              className="office-img"
+            />
+            <h3>Saudi Arabia</h3>
+          </div>
+
+          {/* Dubai / UAE */}
+          <div className="office-card">
+            <img
+              src="/images/dubai-lineart.png"
+              alt="Dubai"
+              className="office-img"
+            />
+            <h3>Dubai</h3>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
