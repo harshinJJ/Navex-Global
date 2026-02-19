@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import "../../styles/Services/services.css";
 import serviceHero from "../../assets/services/Airfreight.png";
 import whybg from "../../assets/services/logistics.png";
-import { FaArrowLeftLong } from "react-icons/fa6";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 import {
   FaCogs,
@@ -16,20 +16,12 @@ import {
   FaCheckCircle,
 } from "react-icons/fa";
 
-import { FaArrowRightLong } from "react-icons/fa6";
-
 function AirFreight() {
   const { t, i18n } = useTranslation("airFreight");
   const isArabic = i18n.language === "ar";
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 40 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8 },
-    },
-  };
+  /* ---------------- PREMIUM ANIMATIONS ---------------- */
+
   const smoothReveal = {
     hidden: { opacity: 0, y: 60 },
     visible: {
@@ -42,21 +34,42 @@ function AirFreight() {
     },
   };
 
-  const staggerParent = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.18 },
-    },
-  };
-
-  const childFade = {
-    hidden: { opacity: 0, y: 25 },
+  const softSection = {
+    hidden: { opacity: 0, y: 30, scale: 0.98 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      scale: 1,
+      transition: {
+        duration: 0.9,
+        ease: [0.25, 1, 0.5, 1],
+      },
     },
   };
+
+  const softStagger = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const softItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.7,
+        ease: [0.25, 1, 0.5, 1],
+      },
+    },
+  };
+
+  /* ---------------- COMPONENT ---------------- */
 
   return (
     <div
@@ -64,7 +77,6 @@ function AirFreight() {
       dir={isArabic ? "rtl" : "ltr"}
       style={{ textAlign: isArabic ? "right" : "left" }}
     >
-      {/* HERO */}
       {/* HERO */}
       <section
         className="services-hero"
@@ -85,47 +97,33 @@ function AirFreight() {
       {/* CONTENT */}
       <section className="services-content">
         <div className="container services-grid">
-          {/* LEFT SIDE – paragraph-wise animation */}
+          {/* LEFT SIDE */}
           <motion.div
             className="services-left"
-            variants={staggerParent}
+            variants={softStagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
           >
-            <motion.h2 className="services-heading" variants={childFade}>
+            <motion.h2 className="services-heading" variants={softItem}>
               {t("heading")}
             </motion.h2>
 
-            <motion.h4 className="services-subheading" variants={childFade}>
+            <motion.h4 className="services-subheading" variants={softItem}>
               {t("subheading")}
             </motion.h4>
 
-            <motion.p variants={childFade} transition={{ delay: 0.1 }}>
-              {t("p1")}
-            </motion.p>
-
-            <motion.p variants={childFade} transition={{ delay: 0.25 }}>
-              {t("p2")}
-            </motion.p>
-
-            <motion.p variants={childFade} transition={{ delay: 0.4 }}>
-              {t("p3")}
-            </motion.p>
-
-            <motion.p variants={childFade} transition={{ delay: 0.55 }}>
-              {t("p4")}
-            </motion.p>
-
-            <motion.p variants={childFade} transition={{ delay: 0.7 }}>
-              {t("p5")}
-            </motion.p>
+            <motion.p variants={softItem}>{t("p1")}</motion.p>
+            <motion.p variants={softItem}>{t("p2")}</motion.p>
+            <motion.p variants={softItem}>{t("p3")}</motion.p>
+            <motion.p variants={softItem}>{t("p4")}</motion.p>
+            <motion.p variants={softItem}>{t("p5")}</motion.p>
           </motion.div>
 
           {/* PROCESS SECTION */}
           <motion.div
             className="process-box"
-            variants={fadeUp}
+            variants={softSection}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.3 }}
@@ -134,17 +132,19 @@ function AirFreight() {
 
             <motion.div
               className="process-flow"
-              variants={staggerParent}
+              variants={softStagger}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
             >
-              <motion.div className="process-item" variants={childFade}>
+              {/* Step 1 */}
+              <motion.div className="process-item" variants={softItem}>
                 <FaCalendarCheck className="process-icon" />
                 <p>{t("process.book")}</p>
               </motion.div>
 
-              <motion.div variants={childFade}>
+              {/* Arrow */}
+              <motion.div variants={softItem}>
                 {isArabic ? (
                   <FaArrowLeftLong className="process-arrow" />
                 ) : (
@@ -152,12 +152,14 @@ function AirFreight() {
                 )}
               </motion.div>
 
-              <motion.div className="process-item" variants={childFade}>
+              {/* Step 2 */}
+              <motion.div className="process-item" variants={softItem}>
                 <FaBoxOpen className="process-icon" />
                 <p>{t("process.pack")}</p>
               </motion.div>
 
-              <motion.div variants={childFade}>
+              {/* Arrow */}
+              <motion.div variants={softItem}>
                 {isArabic ? (
                   <FaArrowLeftLong className="process-arrow" />
                 ) : (
@@ -165,12 +167,14 @@ function AirFreight() {
                 )}
               </motion.div>
 
-              <motion.div className="process-item" variants={childFade}>
+              {/* Step 3 */}
+              <motion.div className="process-item" variants={softItem}>
                 <FaTruckMoving className="process-icon" />
                 <p>{t("process.move")}</p>
               </motion.div>
 
-              <motion.div variants={childFade}>
+              {/* Arrow */}
+              <motion.div variants={softItem}>
                 {isArabic ? (
                   <FaArrowLeftLong className="process-arrow" />
                 ) : (
@@ -178,7 +182,8 @@ function AirFreight() {
                 )}
               </motion.div>
 
-              <motion.div className="process-item" variants={childFade}>
+              {/* Step 4 */}
+              <motion.div className="process-item" variants={softItem}>
                 <FaCheckCircle className="process-icon" />
                 <p>{t("process.delivery")}</p>
               </motion.div>
@@ -196,10 +201,10 @@ function AirFreight() {
           <div className="container">
             <motion.h3
               className="why-card-title"
-              variants={fadeUp}
+              variants={softSection}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: false, amount: 0.3 }}
             >
               {t("why.title1")}{" "}
               <span className="brand-highlight">{t("why.title2")}</span>
@@ -207,12 +212,12 @@ function AirFreight() {
 
             <motion.div
               className="why-card-grid"
-              variants={staggerParent}
+              variants={softStagger}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: false, amount: 0.3 }}
             >
-              <motion.div className="why-card" variants={childFade}>
+              <motion.div className="why-card" variants={softItem}>
                 <div className="why-icon">
                   <FaCogs />
                 </div>
@@ -220,7 +225,7 @@ function AirFreight() {
                 <p>{t("why.card1.text")}</p>
               </motion.div>
 
-              <motion.div className="why-card" variants={childFade}>
+              <motion.div className="why-card" variants={softItem}>
                 <div className="why-icon">
                   <FaGlobe />
                 </div>
@@ -228,7 +233,7 @@ function AirFreight() {
                 <p>{t("why.card2.text")}</p>
               </motion.div>
 
-              <motion.div className="why-card" variants={childFade}>
+              <motion.div className="why-card" variants={softItem}>
                 <div className="why-icon">
                   <FaShieldAlt />
                 </div>
@@ -236,7 +241,7 @@ function AirFreight() {
                 <p>{t("why.card3.text")}</p>
               </motion.div>
 
-              <motion.div className="why-card" variants={childFade}>
+              <motion.div className="why-card" variants={softItem}>
                 <div className="why-icon">
                   <FaHeadset />
                 </div>
