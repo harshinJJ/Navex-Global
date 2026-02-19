@@ -7,12 +7,13 @@ import enHome from "./locales/en/home/translation.json";
 import enHeader from "./locales/en/header/translation.json";
 import enFooter from "./locales/en/footer/translation.json";
 import enAboutPage from "./locales/en/aboutPage/translation.json";
-
+import enAirFreight from "./locales/en/Freight-Forwarding/enAirFreight.json";
 // AR FILES
 import arHome from "./locales/ar/home/translation.json";
 import arHeader from "./locales/ar/header/translation.json";
 import arFooter from "./locales/ar/footer/translation.json";
 import arAboutPage from "./locales/ar/aboutPage/translation.json";
+import arAirFreight from "./locales/ar/Freight-Forwarding/arAirFreight.json";
 
 i18n
   .use(LanguageDetector)
@@ -24,12 +25,14 @@ i18n
         header: enHeader,
         footer: enFooter,
         aboutPage: enAboutPage,
+        airFreight: enAirFreight,
       },
       ar: {
         home: arHome,
         header: arHeader,
         footer: arFooter,
         aboutPage: arAboutPage,
+        airFreight: arAirFreight,
       },
     },
     fallbackLng: "en",
