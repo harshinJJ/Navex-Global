@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import "../../styles/Services/services.css";
 import serviceHero from "../../assets/services/Airfreight.png";
 import whybg from "../../assets/services/logistics.png";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 import {
   FaCogs,
@@ -144,7 +145,11 @@ function AirFreight() {
               </motion.div>
 
               <motion.div variants={childFade}>
-                <FaArrowRightLong className="process-arrow" />
+                {isArabic ? (
+                  <FaArrowLeftLong className="process-arrow" />
+                ) : (
+                  <FaArrowRightLong className="process-arrow" />
+                )}
               </motion.div>
 
               <motion.div className="process-item" variants={childFade}>
@@ -153,7 +158,11 @@ function AirFreight() {
               </motion.div>
 
               <motion.div variants={childFade}>
-                <FaArrowRightLong className="process-arrow" />
+                {isArabic ? (
+                  <FaArrowLeftLong className="process-arrow" />
+                ) : (
+                  <FaArrowRightLong className="process-arrow" />
+                )}
               </motion.div>
 
               <motion.div className="process-item" variants={childFade}>
@@ -162,7 +171,11 @@ function AirFreight() {
               </motion.div>
 
               <motion.div variants={childFade}>
-                <FaArrowRightLong className="process-arrow" />
+                {isArabic ? (
+                  <FaArrowLeftLong className="process-arrow" />
+                ) : (
+                  <FaArrowRightLong className="process-arrow" />
+                )}
               </motion.div>
 
               <motion.div className="process-item" variants={childFade}>
