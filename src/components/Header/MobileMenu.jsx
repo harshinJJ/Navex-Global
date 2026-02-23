@@ -17,7 +17,6 @@ export default function MobileMenu({
     { route: "/air-freight", label: t("air") },
     { route: "/ocean-freight", label: t("ocean") },
     { route: "/road-freight", label: t("road") },
-    { route: "/international-freight", label: t("international") },
     { route: "/sea-air", label: t("seaAir") },
   ];
 
