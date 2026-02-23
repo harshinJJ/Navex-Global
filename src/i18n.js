@@ -23,6 +23,8 @@ import arAirFreight from "./locales/ar/Freight-Forwarding/arAirFreight.json";
 import arOceanFreight from "./locales/ar/Freight-Forwarding/arOceanFreight.json";
 import arRoadFreight from "./locales/ar/Freight-Forwarding/arRoadfreight.json";
 import arSeaAirFreight from "./locales/ar/Freight-Forwarding/arSeaAirfreight.json";
+import enLinerShipping from "./locales/en/Other-services/enLinerShipping.json";
+import arLinerShipping from "./locales/ar/Other-services/arLinerShipping.json";
 
 i18n
   .use(LanguageDetector)
@@ -39,6 +41,7 @@ i18n
         oceanFreight: enOceanFreight,
         roadFreight: enRoadFreight,
         seaairFreight: enSeaAirFreight,
+        linerShipping: enLinerShipping,
       },
       ar: {
         home: arHome,
@@ -50,6 +53,7 @@ i18n
         oceanFreight: arOceanFreight,
         roadFreight: arRoadFreight,
         seaairFreight: arSeaAirFreight,
+        linerShipping: arLinerShipping,
       },
     },
     fallbackLng: "en",

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "../../styles/Services/services.css";
-import serviceHero from "../../assets/services/Roadfreight.png";
+
+import serviceHero from "../../assets/services/Liner-shipping.webp";
 import whybg from "../../assets/services/logistics.png";
+
 import Dubai from "../../assets/Country/Dubai1.png";
 import Saudi from "../../assets/Country/Saudi1.png";
 import India from "../../assets/Country/India1.png";
@@ -28,8 +30,8 @@ import {
   softStagger,
   softItem,
 } from "../../animations/serviceAnimations";
-function RoadFreight() {
-  const { t, i18n } = useTranslation("roadFreight");
+function LinerShipping() {
+  const { t, i18n } = useTranslation("linerShipping");
   const { t: tComp } = useTranslation("servicesComponents");
   const isArabic = i18n.language === "ar";
 
@@ -176,4 +178,4 @@ function RoadFreight() {
   );
 }
 
-export default RoadFreight;
+export default LinerShipping;

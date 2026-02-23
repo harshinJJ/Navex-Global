@@ -40,7 +40,6 @@ export default function DesktopNav({ langPrefix }) {
     { route: "transportation", label: t("transport") },
     { route: "buyers-console", label: t("buyers") },
     { route: "value-added", label: t("value") },
-    { route: "coastal-shipping", label: t("coastal") },
   ];
 
   return (

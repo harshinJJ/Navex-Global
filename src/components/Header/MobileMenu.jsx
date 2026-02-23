@@ -28,7 +28,6 @@ export default function MobileMenu({
     { route: "/transportation", label: t("transport") },
     { route: "/buyers-console", label: t("buyers") },
     { route: "/value-added", label: t("value") },
-    { route: "/coastal-shipping", label: t("coastal") },
   ];
 
   const isActive = (route) => currentPath === `${langPrefix}${route}`;

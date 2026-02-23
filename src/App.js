@@ -11,7 +11,8 @@ import AirFreight from "./pages/Freight-Forwarding/AirFreight";
 import OceanFreight from "./pages/Freight-Forwarding/OceanFreight";
 import RoadFreight from "./pages/Freight-Forwarding/RoadFreight";
 import SeaAirFreight from "./pages/Freight-Forwarding/SeaAirFreight";
-SeaAirFreight;
+import LinerShipping from "./pages/Other-Services/LinerShipping";
+
 function App() {
   return (
     <Router>
@@ -25,13 +26,15 @@ function App() {
         <Route path="/ocean-freight" element={<OceanFreight />} />
         <Route path="/road-freight" element={<RoadFreight />} />
         <Route path="/sea-air" element={<SeaAirFreight />} />
+        <Route path="/liner-shipping" element={<LinerShipping />} />
+
         {/* Arabic */}
         <Route path="/ar" element={<Home />} />
         <Route path="/ar/about" element={<About_us />} />
         <Route path="/ar/air-freight" element={<AirFreight />} />
         <Route path="/ar/ocean-freight" element={<OceanFreight />} />
         <Route path="/ar/road-freight" element={<RoadFreight />} />
-        <Route path="/ar/sea-air" element={<SeaAirFreight />} />
+        <Route path="/ar/liner-shipping" element={<LinerShipping />} />
       </Routes>
 
       <Footer />
