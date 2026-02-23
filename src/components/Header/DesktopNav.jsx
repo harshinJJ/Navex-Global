@@ -12,9 +12,15 @@ export default function DesktopNav({ langPrefix }) {
     "/air-freight",
     "/ocean-freight",
     "/road-freight",
-    "/international-freight",
     "/sea-air",
   ].some((route) => currentPath === `${langPrefix}${route}`);
+
+  const freightList = [
+    { route: "air-freight", label: t("air") },
+    { route: "ocean-freight", label: t("ocean") },
+    { route: "road-freight", label: t("road") },
+    { route: "sea-air", label: t("seaAir") },
+  ];
 
   const isServicesActive = [
     "/liner-shipping",
@@ -24,10 +30,7 @@ export default function DesktopNav({ langPrefix }) {
     "/transportation",
     "/buyers-console",
     "/value-added",
-    "/coastal-shipping",
   ].some((route) => currentPath === `${langPrefix}${route}`);
-
-  /* ---- Correct Mapping Based on Your JSON Keys ---- */
 
   const servicesList = [
     { route: "liner-shipping", label: t("liner") },
@@ -68,44 +71,17 @@ export default function DesktopNav({ langPrefix }) {
           </span>
 
           <div className="dropdown-menu">
-            <Link
-              className={isActive(`${langPrefix}/air-freight`) ? "active" : ""}
-              to={`${langPrefix}/air-freight`}
-            >
-              {t("air")}
-            </Link>
-
-            <Link
-              className={
-                isActive(`${langPrefix}/ocean-freight`) ? "active" : ""
-              }
-              to={`${langPrefix}/ocean-freight`}
-            >
-              {t("ocean")}
-            </Link>
-
-            <Link
-              className={isActive(`${langPrefix}/road-freight`) ? "active" : ""}
-              to={`${langPrefix}/road-freight`}
-            >
-              {t("road")}
-            </Link>
-
-            <Link
-              className={
-                isActive(`${langPrefix}/international-freight`) ? "active" : ""
-              }
-              to={`${langPrefix}/international-freight`}
-            >
-              {t("international")}
-            </Link>
-
-            <Link
-              className={isActive(`${langPrefix}/sea-air`) ? "active" : ""}
-              to={`${langPrefix}/sea-air`}
-            >
-              {t("seaAir")}
-            </Link>
+            {freightList.map((item, index) => (
+              <Link
+                key={index}
+                className={
+                  isActive(`${langPrefix}/${item.route}`) ? "active" : ""
+                }
+                to={`${langPrefix}/${item.route}`}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
 

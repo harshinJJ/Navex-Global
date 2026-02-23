@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function MobileMenu({
@@ -10,23 +10,51 @@ export default function MobileMenu({
   changeLang,
 }) {
   const { t, i18n } = useTranslation("header");
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const freightList = [
+    { route: "/air-freight", label: t("air") },
+    { route: "/ocean-freight", label: t("ocean") },
+    { route: "/road-freight", label: t("road") },
+    { route: "/international-freight", label: t("international") },
+    { route: "/sea-air", label: t("seaAir") },
+  ];
+
+  const servicesList = [
+    { route: "/liner-shipping", label: t("liner") },
+    { route: "/customs-clearance", label: t("customs") },
+    { route: "/warehouse-3pl", label: t("warehouse") },
+    { route: "/project-logistics", label: t("project") },
+    { route: "/transportation", label: t("transport") },
+    { route: "/buyers-console", label: t("buyers") },
+    { route: "/value-added", label: t("value") },
+    { route: "/coastal-shipping", label: t("coastal") },
+  ];
+
+  const isActive = (route) => currentPath === `${langPrefix}${route}`;
 
   return (
     <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
-      <Link to={`${langPrefix}/`} onClick={() => setMenuOpen(false)}>
+      {/* HOME */}
+      <Link
+        to={`${langPrefix}/`}
+        className={isActive("/") ? "active" : ""}
+        onClick={() => setMenuOpen(false)}
+      >
         {t("home")}
       </Link>
 
       {/* ABOUT */}
       <Link
         to={`${langPrefix}/about`}
-        className="mobile-nav-item"
+        className={isActive("/about") ? "active" : ""}
         onClick={() => setMenuOpen(false)}
       >
         {t("aboutUs")}
       </Link>
 
-      {/* FREIGHT */}
+      {/* FREIGHT DROPDOWN */}
       <div className="mobile-dropdown">
         <div
           className="mobile-dropdown-title"
@@ -37,41 +65,21 @@ export default function MobileMenu({
 
         {mobileDropdown === "freight" && (
           <div className="mobile-submenu">
-            <Link
-              to={`${langPrefix}/air-freight`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("air")}
-            </Link>
-            <Link
-              to={`${langPrefix}/ocean-freight`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("ocean")}
-            </Link>
-            <Link
-              to={`${langPrefix}/road-freight`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("road")}
-            </Link>
-            <Link
-              to={`${langPrefix}/international-freight`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("international")}
-            </Link>
-            <Link
-              to={`${langPrefix}/sea-air`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("seaAir")}
-            </Link>
+            {freightList.map((item, index) => (
+              <Link
+                key={index}
+                to={`${langPrefix}${item.route}`}
+                className={isActive(item.route) ? "active" : ""}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         )}
       </div>
 
-      {/* OTHER SERVICES */}
+      {/* SERVICES DROPDOWN */}
       <div className="mobile-dropdown">
         <div
           className="mobile-dropdown-title"
@@ -82,59 +90,26 @@ export default function MobileMenu({
 
         {mobileDropdown === "services" && (
           <div className="mobile-submenu">
-            <Link
-              to={`${langPrefix}/liner-shipping`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("liner")}
-            </Link>
-            <Link
-              to={`${langPrefix}/customs-clearance`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("customs")}
-            </Link>
-            <Link
-              to={`${langPrefix}/warehouse-3pl`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("warehouse")}
-            </Link>
-            <Link
-              to={`${langPrefix}/project-logistics`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("project")}
-            </Link>
-            <Link
-              to={`${langPrefix}/transportation`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("transport")}
-            </Link>
-            <Link
-              to={`${langPrefix}/buyers-console`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("buyers")}
-            </Link>
-            <Link
-              to={`${langPrefix}/value-added`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("value")}
-            </Link>
-            <Link
-              to={`${langPrefix}/coastal-shipping`}
-              onClick={() => setMenuOpen(false)}
-            >
-              {t("coastal")}
-            </Link>
+            {servicesList.map((item, index) => (
+              <Link
+                key={index}
+                to={`${langPrefix}${item.route}`}
+                className={isActive(item.route) ? "active" : ""}
+                onClick={() => setMenuOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         )}
       </div>
 
-      <Link to={`${langPrefix}/contact`} onClick={() => setMenuOpen(false)}>
+      {/* CONTACT */}
+      <Link
+        to={`${langPrefix}/contact`}
+        className={isActive("/contact") ? "active" : ""}
+        onClick={() => setMenuOpen(false)}
+      >
         {t("contact")}
       </Link>
 

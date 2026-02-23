@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import "../../styles/Services/services.css";
 
-import serviceHero from "../../assets/services/Airfreight.png";
+import serviceHero from "../../assets/services/SeaAir.png";
 import whybg from "../../assets/services/logistics.png";
 
 import Dubai from "../../assets/Country/Dubai1.png";
@@ -30,8 +30,8 @@ import {
   softStagger,
   softItem,
 } from "../../animations/serviceAnimations";
-function AirFreight() {
-  const { t, i18n } = useTranslation("airFreight");
+function SeaAirFreight() {
+  const { t, i18n } = useTranslation("seaairFreight");
   const { t: tComp } = useTranslation("servicesComponents");
   const isArabic = i18n.language === "ar";
 
@@ -178,4 +178,4 @@ function AirFreight() {
   );
 }
 
-export default AirFreight;
+export default SeaAirFreight;

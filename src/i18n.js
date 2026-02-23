@@ -7,13 +7,22 @@ import enHome from "./locales/en/home/translation.json";
 import enHeader from "./locales/en/header/translation.json";
 import enFooter from "./locales/en/footer/translation.json";
 import enAboutPage from "./locales/en/aboutPage/translation.json";
+import enServicesComponents from "./locales/en/Services/translation.json";
 import enAirFreight from "./locales/en/Freight-Forwarding/enAirFreight.json";
+import enOceanFreight from "./locales/en/Freight-Forwarding/enOceanFreight.json";
+import enRoadFreight from "./locales/en/Freight-Forwarding/enRoadfreight.json";
+import enSeaAirFreight from "./locales/en/Freight-Forwarding/enSeaAirfreight.json";
+
 // AR FILES
 import arHome from "./locales/ar/home/translation.json";
 import arHeader from "./locales/ar/header/translation.json";
 import arFooter from "./locales/ar/footer/translation.json";
 import arAboutPage from "./locales/ar/aboutPage/translation.json";
+import arServicesComponents from "./locales/ar/Services/translation.json";
 import arAirFreight from "./locales/ar/Freight-Forwarding/arAirFreight.json";
+import arOceanFreight from "./locales/ar/Freight-Forwarding/arOceanFreight.json";
+import arRoadFreight from "./locales/ar/Freight-Forwarding/arRoadfreight.json";
+import arSeaAirFreight from "./locales/ar/Freight-Forwarding/arSeaAirfreight.json";
 
 i18n
   .use(LanguageDetector)
@@ -25,14 +34,22 @@ i18n
         header: enHeader,
         footer: enFooter,
         aboutPage: enAboutPage,
+        servicesComponents: enServicesComponents,
         airFreight: enAirFreight,
+        oceanFreight: enOceanFreight,
+        roadFreight: enRoadFreight,
+        seaairFreight: enSeaAirFreight,
       },
       ar: {
         home: arHome,
         header: arHeader,
         footer: arFooter,
         aboutPage: arAboutPage,
+        servicesComponents: arServicesComponents,
         airFreight: arAirFreight,
+        oceanFreight: arOceanFreight,
+        roadFreight: arRoadFreight,
+        seaairFreight: arSeaAirFreight,
       },
     },
     fallbackLng: "en",

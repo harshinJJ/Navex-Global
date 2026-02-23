@@ -8,7 +8,10 @@ import Home from "./pages/Home";
 import About_us from "./pages/About-us";
 import ScrollToTop from "./components/ScrollToTop";
 import AirFreight from "./pages/Freight-Forwarding/AirFreight";
-
+import OceanFreight from "./pages/Freight-Forwarding/OceanFreight";
+import RoadFreight from "./pages/Freight-Forwarding/RoadFreight";
+import SeaAirFreight from "./pages/Freight-Forwarding/SeaAirFreight";
+SeaAirFreight;
 function App() {
   return (
     <Router>
@@ -19,10 +22,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About_us />} />
         <Route path="/air-freight" element={<AirFreight />} />
+        <Route path="/ocean-freight" element={<OceanFreight />} />
+        <Route path="/road-freight" element={<RoadFreight />} />
+        <Route path="/sea-air" element={<SeaAirFreight />} />
         {/* Arabic */}
         <Route path="/ar" element={<Home />} />
         <Route path="/ar/about" element={<About_us />} />
         <Route path="/ar/air-freight" element={<AirFreight />} />
+        <Route path="/ar/ocean-freight" element={<OceanFreight />} />
+        <Route path="/ar/road-freight" element={<RoadFreight />} />
+        <Route path="/ar/sea-air" element={<SeaAirFreight />} />
       </Routes>
 
       <Footer />

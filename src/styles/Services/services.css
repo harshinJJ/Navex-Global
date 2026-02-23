@@ -56,7 +56,6 @@
   margin: 0 auto;
 }
 
-/* Headings */
 .services-heading {
   font-size: 56px;
   margin-bottom: 10px;
@@ -78,7 +77,6 @@
   color: #cfcfcf;
 }
 
-/* Grid */
 .services-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -400,88 +398,59 @@
 }
 .offices-section {
   background: #000;
-  padding: 80px 0;
+  padding: 50px 20px;
   width: 100%;
 }
 
-.offices-container {
-  max-width: 1350px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
+.offices-title {
   text-align: center;
-  flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
-.office-card {
-  flex: 1;
-  min-width: 280px;
-  color: #bcbcbc;
-}
-
-.office-img {
-  width: 180px;
-  margin: 0 auto 25px;
-  display: block;
-}
-
-.office-card h3 {
+.offices-title h2 {
   color: #fff;
-  font-size: 20px;
-  margin-bottom: 15px;
-  font-weight: 600;
+  font-size: 42px;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
 }
 
-.office-card p {
-  margin: 4px 0;
+.offices-title p {
   color: #bcbcbc;
-  font-size: 15px;
-  line-height: 22px;
-}
-
-.office-mail {
-  color: #b999ff;
-  text-decoration: none;
-  display: block;
-  margin: 10px 0;
-  font-size: 15px;
-}
-
-.office-mail:hover {
-  color: #d5c2ff;
-}
-
-.office-phone {
-  color: #fff;
-  margin-top: 5px;
-  font-size: 15px;
-}
-.offices-section {
-  background: #000;
-  padding: 80px 0;
-  width: 100%;
+  font-size: 16px;
 }
 
 .offices-container {
   max-width: 1300px;
   margin: auto;
   display: flex;
-  justify-content: space-between;
-  text-align: center;
-  gap: 40px;
+  justify-content: center;
+  gap: 140px;
   flex-wrap: wrap;
+  text-align: center;
+}
+
+.highlight {
+  color: rgba(248, 191, 127);
 }
 
 .office-card {
-  flex: 1;
-  min-width: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  width: 260px;
+  transition: all 0.3s ease;
+}
+
+.office-card:hover {
+  transform: translateY(-10px);
 }
 
 .office-img {
-  width: 180px;
-  margin: 0 auto 25px;
-  opacity: 0.9;
+  width: 190px;
+  height: 190px;
+  object-fit: contain;
+  margin: 0 auto 20px;
+  display: block;
+  opacity: 0.95;
 }
 
 .office-card h3 {
@@ -489,4 +458,39 @@
   font-size: 20px;
   font-weight: 600;
   margin-top: 10px;
+}
+
+@media (max-width: 1200px) {
+  .offices-container {
+    gap: 100px;
+  }
+}
+
+@media (max-width: 992px) {
+  .offices-title h2 {
+    font-size: 32px;
+  }
+
+  .offices-container {
+    gap: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offices-title h2 {
+    font-size: 30px;
+  }
+
+  .office-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .office-card {
+    width: 260px;
+  }
+
+  .offices-container {
+    gap: 0px;
+  }
 }
