@@ -4,6 +4,7 @@ import "./i18n";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import WhatsAppButton from "./components/Whatsapp/WhatsAppButton";
 import Home from "./pages/Home";
 import About_us from "./pages/About-us";
 import ScrollToTop from "./components/ScrollToTop";
@@ -18,6 +19,7 @@ import ProjectLogistics from "./pages/Other-Services/ProjectLogistics";
 import Transportation from "./pages/Other-Services/Transportation";
 import BuyersConsole from "./pages/Other-Services/BuyersConsole";
 import ValueAddedService from "./pages/Other-Services/ValueAddedService";
+import ContactWidget from "./components/ContactWidget/ContactWidget";
 
 function App() {
   return (
@@ -54,7 +56,7 @@ function App() {
         <Route path="/ar/buyers-console" element={<BuyersConsole />} />
         <Route path="/ar/value-added" element={<ValueAddedService />} />
       </Routes>
-
+      <WhatsAppButton />
       <Footer />
     </Router>
   );
