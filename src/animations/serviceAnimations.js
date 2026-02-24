@@ -8,27 +8,24 @@ export const smoothReveal = {
 };
 
 export const softSection = {
-  hidden: { opacity: 0, y: 15 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
+    transition: { duration: 1, ease: "easeOut" },
   },
 };
 
 export const softStagger = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+    transition: { staggerChildren: 0.18 },
   },
 };
 
 export const softItem = {
-  hidden: { opacity: 0, y: 10, scale: 0.98 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: { duration: 0.45, ease: "easeOut" },
+    transition: { duration: 0.9, ease: "easeOut" },
   },
 };
