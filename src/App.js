@@ -12,6 +12,12 @@ import OceanFreight from "./pages/Freight-Forwarding/OceanFreight";
 import RoadFreight from "./pages/Freight-Forwarding/RoadFreight";
 import SeaAirFreight from "./pages/Freight-Forwarding/SeaAirFreight";
 import LinerShipping from "./pages/Other-Services/LinerShipping";
+import CustomsClearance from "./pages/Other-Services/CustomsClearance";
+import Warehouse3pl from "./pages/Other-Services/Warehouse3pl";
+import ProjectLogistics from "./pages/Other-Services/ProjectLogistics";
+import Transportation from "./pages/Other-Services/Transportation";
+import BuyersConsole from "./pages/Other-Services/BuyersConsole";
+import ValueAddedService from "./pages/Other-Services/ValueAddedService";
 
 function App() {
   return (
@@ -27,6 +33,12 @@ function App() {
         <Route path="/road-freight" element={<RoadFreight />} />
         <Route path="/sea-air" element={<SeaAirFreight />} />
         <Route path="/liner-shipping" element={<LinerShipping />} />
+        <Route path="/customs-clearance" element={<CustomsClearance />} />
+        <Route path="/warehouse-3pl" element={<Warehouse3pl />} />
+        <Route path="/project-logistics" element={<ProjectLogistics />} />
+        <Route path="/transportation" element={<Transportation />} />
+        <Route path="/buyers-console" element={<BuyersConsole />} />
+        <Route path="/value-added" element={<ValueAddedService />} />
 
         {/* Arabic */}
         <Route path="/ar" element={<Home />} />
@@ -35,6 +47,12 @@ function App() {
         <Route path="/ar/ocean-freight" element={<OceanFreight />} />
         <Route path="/ar/road-freight" element={<RoadFreight />} />
         <Route path="/ar/liner-shipping" element={<LinerShipping />} />
+        <Route path="/ar/customs-clearance" element={<CustomsClearance />} />
+        <Route path="/ar/warehouse-3pl" element={<Warehouse3pl />} />
+        <Route path="/ar/project-logistics" element={<ProjectLogistics />} />
+        <Route path="/ar/transportation" element={<Transportation />} />
+        <Route path="/ar/buyers-console" element={<BuyersConsole />} />
+        <Route path="/ar/value-added" element={<ValueAddedService />} />
       </Routes>
 
       <Footer />

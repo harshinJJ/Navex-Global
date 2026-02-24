@@ -3,22 +3,17 @@
     "title": "Liner Shipping"
   },
 
-  "heading": "Liner Shipping Solutions",
-  "subheading": "Reliable, scheduled, and cost-efficient ocean transport.",
+  "heading": "Liner Shipping Services",
+  "subheading": "Reliable, scheduled and cost-efficient ocean transport for global cargo.",
 
-  "p1": "Navex Global delivers dependable liner shipping services backed by strong partnerships with major carriers and global port networks. Our solutions support businesses with predictable schedules, stable routes, and efficient ocean transportation to international destinations.",
-
-  "p2": "Whether you are shipping full container loads or consolidating smaller cargo, we provide tailored liner shipping solutions designed to match your volume, route, and delivery requirements. Our team handles documentation, coordination, and loading arrangements with precision.",
-
-  "p3": "We work closely with trusted vessel operators and port terminals to ensure safe, timely, and cost-effective movement of your containers. Our strong operational network allows us to manage shipments across the GCC, Asia, Europe, and key global trade lanes.",
-
-  "p4": "Liner shipping is an ideal choice for businesses requiring stable schedules and predictable transit times. From port planning to vessel booking, our experts manage every stage of the process to ensure smooth and compliant cargo movement.",
-
-  "p5": "Efficient Bill of Lading processing and accurate container tracking are crucial for global shipments. Navex Global guarantees fast documentation handling, proactive updates, and seamless coordination from origin port to final destination.",
+  "p1": "Navex Global offers reliable liner shipping services that ensure smooth and predictable cargo movement across major international trade routes. Our partnerships with trusted carriers support consistent sailing schedules and efficient ocean transport.",
+  "p2": "We handle both full container loads and consolidated shipments, providing tailored liner shipping solutions that match your transit-time, routing and volume requirements across global ports.",
+  "p3": "Our logistics team works closely with vessel operators and port terminals to guarantee safe, timely and cost-effective movement of your containers throughout the GCC, Asia, Europe and key global destinations.",
+  "p4": "From vessel booking to documentation and coordination, we manage the entire liner shipping process to ensure accurate Bill of Lading handling, clear communication and seamless cargo flow from origin to destination.",
 
   "process": {
     "title": "Process",
-    "book": "Booking & Documentation",
+    "book": "Booking",
     "pack": "Container Stuffing",
     "move": "Ocean Transit",
     "delivery": "Port Delivery"

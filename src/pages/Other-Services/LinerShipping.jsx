@@ -16,8 +16,8 @@ import {
   FaHeadset,
   FaCalendarCheck,
   FaBoxOpen,
-  FaTruckMoving,
-  FaCheckCircle,
+  FaShip,
+  FaTruck,
 } from "react-icons/fa";
 
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
@@ -80,7 +80,6 @@ function LinerShipping() {
             <motion.p variants={softItem}>{t("p2")}</motion.p>
             <motion.p variants={softItem}>{t("p3")}</motion.p>
             <motion.p variants={softItem}>{t("p4")}</motion.p>
-            <motion.p variants={softItem}>{t("p5")}</motion.p>
           </motion.div>
 
           {/* PROCESS SECTION */}
@@ -98,6 +97,7 @@ function LinerShipping() {
               initial="hidden"
               whileInView="visible"
             >
+              {/* Step 1: Booking */}
               <motion.div className="process-item" variants={softItem}>
                 <FaCalendarCheck className="process-icon" />
                 <p>{t("process.book")}</p>
@@ -111,6 +111,7 @@ function LinerShipping() {
                 )}
               </motion.div>
 
+              {/* Step 2: Container Stuffing */}
               <motion.div className="process-item" variants={softItem}>
                 <FaBoxOpen className="process-icon" />
                 <p>{t("process.pack")}</p>
@@ -124,8 +125,9 @@ function LinerShipping() {
                 )}
               </motion.div>
 
+              {/* Step 3: Ocean Transit */}
               <motion.div className="process-item" variants={softItem}>
-                <FaTruckMoving className="process-icon" />
+                <FaShip className="process-icon" />
                 <p>{t("process.move")}</p>
               </motion.div>
 
@@ -137,8 +139,9 @@ function LinerShipping() {
                 )}
               </motion.div>
 
+              {/* Step 4: Port Delivery */}
               <motion.div className="process-item" variants={softItem}>
-                <FaCheckCircle className="process-icon" />
+                <FaTruck className="process-icon" />
                 <p>{t("process.delivery")}</p>
               </motion.div>
             </motion.div>

@@ -91,7 +91,6 @@
   color: #cfcfcf;
 }
 
-/* Tablets */
 @media (max-width: 1025px) {
   .services-grid {
     grid-template-columns: 1fr;
@@ -123,7 +122,7 @@
     padding: 0 15px;
   }
 }
-/* Large phones */
+
 @media (max-width: 765px) {
   .services-grid {
     gap: 0px;
@@ -397,7 +396,6 @@
   }
 }
 .offices-section {
-  background: #000;
   padding: 50px 20px;
   width: 100%;
 }
@@ -495,85 +493,9 @@
   }
 }
 
-/* =========================
-   COMPACT GOLD-BLACK ACCORDION
-========================= */
-
-.accordion {
-  width: 100%;
-  max-width: 750px; /* Compact size */
-  margin: 50px auto; /* Center align */
+.combo-icons {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-/* ITEM */
-.accordion-item {
-  background: #0a0a0a;
-  border: 1px solid rgba(248, 191, 127, 0.18);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.25s ease;
-}
-
-.accordion-item:hover {
-  border-color: rgba(248, 191, 127, 0.35);
-  transform: translateY(-2px);
-}
-
-/* HEADER */
-.accordion-header {
-  padding: 16px 20px;
-  background: rgba(12, 12, 12, 1);
-  border: none;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  cursor: pointer;
-  color: #fff;
-  text-align: left;
-}
-
-.accordion-title {
-  font-size: 16px;
-  font-weight: 500;
-}
-
-/* ICON */
-.accordion-header svg {
-  color: rgba(248, 191, 127);
-  font-size: 16px;
-  transition: 0.3s ease;
-}
-
-/* BODY */
-.accordion-body {
-  background: #050505;
-  border-top: 1px solid rgba(248, 191, 127, 0.15);
-  overflow: hidden;
-}
-
-.accordion-text {
-  padding: 15px 20px;
-  margin: 0;
-  line-height: 1.6;
-  color: #cfcfcf;
-  font-size: 15px;
-}
-
-/* Fade effect */
-.accordion-body p {
-  animation: fadeIn 0.25s ease forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  gap: 6px;
+  font-size: 24px;
 }

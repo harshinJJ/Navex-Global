@@ -1,37 +1,34 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
 import "../../styles/Services/services.css";
 
-import serviceHero from "../../assets/services/Oceanfreight.png";
+import serviceHero from "../../assets/services/Value-Added.png";
 import whybg from "../../assets/services/logistics.png";
 
 import Dubai from "../../assets/Country/Dubai1.png";
 import Saudi from "../../assets/Country/Saudi1.png";
 import India from "../../assets/Country/India1.png";
 
-import {
-  FaCogs,
-  FaGlobe,
-  FaShieldAlt,
-  FaHeadset,
-  FaCalendarCheck,
-  FaBoxOpen,
-  FaShip,
-  FaCheckCircle,
-} from "react-icons/fa";
+import { FaCogs, FaGlobe, FaShieldAlt, FaHeadset } from "react-icons/fa";
+
+import { FaLayerGroup, FaBoxOpen, FaGlobeAsia } from "react-icons/fa";
+
+import { FaTruckRampBox } from "react-icons/fa6";
 
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 import ServiceWhy from "../../components/Services/ServiceWhy";
 import ServiceOffices from "../../components/Services/ServiceOffices";
+
 import {
   smoothReveal,
   softSection,
   softStagger,
   softItem,
 } from "../../animations/serviceAnimations";
-function OceanFreight() {
-  const { t, i18n } = useTranslation("oceanFreight");
+function ValueAddedService() {
+  const { t, i18n } = useTranslation("valueAddedService");
   const { t: tComp } = useTranslation("servicesComponents");
   const isArabic = i18n.language === "ar";
 
@@ -53,8 +50,10 @@ function OceanFreight() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.4 }}
         >
-          {t("hero.title").split(" ")[0]}{" "}
-          <span className="highlight">{t("hero.title").split(" ")[1]}</span>
+          {t("hero.title").split(" ").slice(0, -1).join(" ")}{" "}
+          <span className="highlight">
+            {t("hero.title").split(" ").slice(-1)}
+          </span>
         </motion.h1>
       </section>
 
@@ -71,11 +70,9 @@ function OceanFreight() {
             <motion.h2 className="services-heading" variants={softItem}>
               {t("heading")}
             </motion.h2>
-
             <motion.h4 className="services-subheading" variants={softItem}>
               {t("subheading")}
             </motion.h4>
-
             <motion.p variants={softItem}>{t("p1")}</motion.p>
             <motion.p variants={softItem}>{t("p2")}</motion.p>
             <motion.p variants={softItem}>{t("p3")}</motion.p>
@@ -98,8 +95,9 @@ function OceanFreight() {
               initial="hidden"
               whileInView="visible"
             >
+              {/* Step 1 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaCalendarCheck className="process-icon" />
+                <FaTruckRampBox className="process-icon" />
                 <p>{t("process.book")}</p>
               </motion.div>
 
@@ -111,8 +109,9 @@ function OceanFreight() {
                 )}
               </motion.div>
 
+              {/* Step 2 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaBoxOpen className="process-icon" />
+                <FaLayerGroup className="process-icon" />
                 <p>{t("process.pack")}</p>
               </motion.div>
 
@@ -124,8 +123,9 @@ function OceanFreight() {
                 )}
               </motion.div>
 
+              {/* Step 3 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaShip className="process-icon" />
+                <FaBoxOpen className="process-icon" />
                 <p>{t("process.move")}</p>
               </motion.div>
 
@@ -137,8 +137,9 @@ function OceanFreight() {
                 )}
               </motion.div>
 
+              {/* Step 4 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaCheckCircle className="process-icon" />
+                <FaGlobeAsia className="process-icon" />
                 <p>{t("process.delivery")}</p>
               </motion.div>
             </motion.div>
@@ -178,4 +179,4 @@ function OceanFreight() {
   );
 }
 
-export default OceanFreight;
+export default ValueAddedService;

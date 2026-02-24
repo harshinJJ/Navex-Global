@@ -16,7 +16,8 @@ import {
   FaHeadset,
   FaCalendarCheck,
   FaBoxOpen,
-  FaTruckMoving,
+  FaShip,
+  FaPlaneDeparture,
   FaCheckCircle,
 } from "react-icons/fa";
 
@@ -125,7 +126,10 @@ function SeaAirFreight() {
               </motion.div>
 
               <motion.div className="process-item" variants={softItem}>
-                <FaTruckMoving className="process-icon" />
+                <div className="process-icon combo-icons">
+                  <FaShip />
+                  <FaPlaneDeparture />
+                </div>
                 <p>{t("process.move")}</p>
               </motion.div>
 

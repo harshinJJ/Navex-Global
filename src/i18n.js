@@ -12,6 +12,13 @@ import enAirFreight from "./locales/en/Freight-Forwarding/enAirFreight.json";
 import enOceanFreight from "./locales/en/Freight-Forwarding/enOceanFreight.json";
 import enRoadFreight from "./locales/en/Freight-Forwarding/enRoadfreight.json";
 import enSeaAirFreight from "./locales/en/Freight-Forwarding/enSeaAirfreight.json";
+import enLinerShipping from "./locales/en/Other-services/enLinerShipping.json";
+import enCustomsClearance from "./locales/en/Other-services/enCustomsClearance.json";
+import enWarehouse3pl from "./locales/en/Other-services/enWarehouse3pl.json";
+import enprojectLogistics from "./locales/en/Other-services/enprojectLogistics.json";
+import enTransportation from "./locales/en/Other-services/enTransportation.json";
+import enbuyersConsole from "./locales/en/Other-services/enbuyersConsole.json";
+import envalueAddedService from "./locales/en/Other-services/envalueAddedService.json";
 
 // AR FILES
 import arHome from "./locales/ar/home/translation.json";
@@ -23,8 +30,13 @@ import arAirFreight from "./locales/ar/Freight-Forwarding/arAirFreight.json";
 import arOceanFreight from "./locales/ar/Freight-Forwarding/arOceanFreight.json";
 import arRoadFreight from "./locales/ar/Freight-Forwarding/arRoadfreight.json";
 import arSeaAirFreight from "./locales/ar/Freight-Forwarding/arSeaAirfreight.json";
-import enLinerShipping from "./locales/en/Other-services/enLinerShipping.json";
 import arLinerShipping from "./locales/ar/Other-services/arLinerShipping.json";
+import arCustomsClearance from "./locales/ar/Other-services/arCustomsClearance.json";
+import arWarehouse3pl from "./locales/ar/Other-services/arWarehouse3pl.json";
+import arprojectLogistics from "./locales/ar/Other-services/arprojectLogistics.json";
+import arTransportation from "./locales/ar/Other-services/arTransportation.json";
+import arbuyersConsole from "./locales/ar/Other-services/arbuyersConsole.json";
+import arvalueAddedService from "./locales/ar/Other-services/arvalueAddedService.json";
 
 i18n
   .use(LanguageDetector)
@@ -42,6 +54,12 @@ i18n
         roadFreight: enRoadFreight,
         seaairFreight: enSeaAirFreight,
         linerShipping: enLinerShipping,
+        customsclearance: enCustomsClearance,
+        warehouse3pl: enWarehouse3pl,
+        projectLogistics: enprojectLogistics,
+        transportation: enTransportation,
+        buyersConsole: enbuyersConsole,
+        valueAddedService: envalueAddedService,
       },
       ar: {
         home: arHome,
@@ -54,6 +72,11 @@ i18n
         roadFreight: arRoadFreight,
         seaairFreight: arSeaAirFreight,
         linerShipping: arLinerShipping,
+        customsclearance: arCustomsClearance,
+        warehouse3pl: arWarehouse3pl,
+        projectLogistics: arprojectLogistics,
+        transportation: arTransportation,
+        valueAddedService: arvalueAddedService,
       },
     },
     fallbackLng: "en",

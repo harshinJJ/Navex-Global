@@ -1,37 +1,37 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+
 import "../../styles/Services/services.css";
 
-import serviceHero from "../../assets/services/Oceanfreight.png";
+import serviceHero from "../../assets/services/Transportation1.png";
 import whybg from "../../assets/services/logistics.png";
 
 import Dubai from "../../assets/Country/Dubai1.png";
 import Saudi from "../../assets/Country/Saudi1.png";
 import India from "../../assets/Country/India1.png";
 
+import { FaCogs, FaGlobe, FaShieldAlt, FaHeadset } from "react-icons/fa";
 import {
-  FaCogs,
-  FaGlobe,
-  FaShieldAlt,
-  FaHeadset,
-  FaCalendarCheck,
-  FaBoxOpen,
-  FaShip,
-  FaCheckCircle,
+  FaClipboardList,
+  FaCalendarAlt,
+  FaLocationArrow,
 } from "react-icons/fa";
+
+import { FaTruckFast } from "react-icons/fa6";
 
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 import ServiceWhy from "../../components/Services/ServiceWhy";
 import ServiceOffices from "../../components/Services/ServiceOffices";
+
 import {
   smoothReveal,
   softSection,
   softStagger,
   softItem,
 } from "../../animations/serviceAnimations";
-function OceanFreight() {
-  const { t, i18n } = useTranslation("oceanFreight");
+function Transportation() {
+  const { t, i18n } = useTranslation("transportation");
   const { t: tComp } = useTranslation("servicesComponents");
   const isArabic = i18n.language === "ar";
 
@@ -53,8 +53,10 @@ function OceanFreight() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.4 }}
         >
-          {t("hero.title").split(" ")[0]}{" "}
-          <span className="highlight">{t("hero.title").split(" ")[1]}</span>
+          {t("hero.title").split(" ").slice(0, -1).join(" ")}{" "}
+          <span className="highlight">
+            {t("hero.title").split(" ").slice(-1)}
+          </span>
         </motion.h1>
       </section>
 
@@ -98,8 +100,9 @@ function OceanFreight() {
               initial="hidden"
               whileInView="visible"
             >
+              {/* Step 1 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaCalendarCheck className="process-icon" />
+                <FaClipboardList className="process-icon" />
                 <p>{t("process.book")}</p>
               </motion.div>
 
@@ -111,8 +114,9 @@ function OceanFreight() {
                 )}
               </motion.div>
 
+              {/* Step 2 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaBoxOpen className="process-icon" />
+                <FaCalendarAlt className="process-icon" />
                 <p>{t("process.pack")}</p>
               </motion.div>
 
@@ -124,8 +128,9 @@ function OceanFreight() {
                 )}
               </motion.div>
 
+              {/* Step 3 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaShip className="process-icon" />
+                <FaTruckFast className="process-icon" />
                 <p>{t("process.move")}</p>
               </motion.div>
 
@@ -137,8 +142,9 @@ function OceanFreight() {
                 )}
               </motion.div>
 
+              {/* Step 4 */}
               <motion.div className="process-item" variants={softItem}>
-                <FaCheckCircle className="process-icon" />
+                <FaLocationArrow className="process-icon" />
                 <p>{t("process.delivery")}</p>
               </motion.div>
             </motion.div>
@@ -178,4 +184,4 @@ function OceanFreight() {
   );
 }
 
-export default OceanFreight;
+export default Transportation;
