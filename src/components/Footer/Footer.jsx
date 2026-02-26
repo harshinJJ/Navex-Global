@@ -2,13 +2,41 @@ import "../../styles/footer.css";
 import { FiFacebook, FiInstagram, FiX } from "react-icons/fi";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
+import { useState } from "react";
 
 export default function Footer() {
   const { t } = useTranslation("footer");
 
+  const [email, setEmail] = useState("");
+
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      alert("Please enter your email");
+      return;
+    }
+
+    emailjs
+      .send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        { subscriber_email: email },
+        "YOUR_PUBLIC_KEY",
+      )
+      .then(() => {
+        alert("Subscribed successfully!");
+        setEmail("");
+      })
+      .catch(() => {
+        alert("Something went wrong!");
+      });
   };
 
   return (
@@ -68,8 +96,16 @@ export default function Footer() {
           <motion.div className="footer-right">
             <h3 className="footer-news-title">{t("footer.subscribeTitle")}</h3>
 
-            <motion.div className="footer-input-wrap">
-              <input type="email" placeholder={t("footer.emailPlaceholder")} />
+            <motion.form
+              className="footer-input-wrap"
+              onSubmit={handleSubscribe}
+            >
+              <input
+                type="email"
+                placeholder={t("footer.emailPlaceholder")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
 
               <motion.button
                 whileHover={{ scale: 1.06, y: -2 }}
@@ -77,7 +113,7 @@ export default function Footer() {
               >
                 {t("footer.submit")}
               </motion.button>
-            </motion.div>
+            </motion.form>
           </motion.div>
         </motion.div>
       </motion.section>
