@@ -19,6 +19,7 @@ import enprojectLogistics from "./locales/en/Other-services/enprojectLogistics.j
 import enTransportation from "./locales/en/Other-services/enTransportation.json";
 import enbuyersConsole from "./locales/en/Other-services/enbuyersConsole.json";
 import envalueAddedService from "./locales/en/Other-services/envalueAddedService.json";
+import encontactUs from "./locales/en/contactUs/translation.json";
 
 // AR FILES
 import arHome from "./locales/ar/home/translation.json";
@@ -37,6 +38,7 @@ import arprojectLogistics from "./locales/ar/Other-services/arprojectLogistics.j
 import arTransportation from "./locales/ar/Other-services/arTransportation.json";
 import arbuyersConsole from "./locales/ar/Other-services/arbuyersConsole.json";
 import arvalueAddedService from "./locales/ar/Other-services/arvalueAddedService.json";
+import arcontactUs from "./locales/ar/contactUs/translation.json";
 
 i18n
   .use(LanguageDetector)
@@ -60,6 +62,7 @@ i18n
         transportation: enTransportation,
         buyersConsole: enbuyersConsole,
         valueAddedService: envalueAddedService,
+        contactUs: encontactUs,
       },
       ar: {
         home: arHome,
@@ -76,7 +79,9 @@ i18n
         warehouse3pl: arWarehouse3pl,
         projectLogistics: arprojectLogistics,
         transportation: arTransportation,
+        buyersConsole: arbuyersConsole,
         valueAddedService: arvalueAddedService,
+        contactUs: arcontactUs,
       },
     },
     fallbackLng: "en",

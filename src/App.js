@@ -20,6 +20,7 @@ import Transportation from "./pages/Other-Services/Transportation";
 import BuyersConsole from "./pages/Other-Services/BuyersConsole";
 import ValueAddedService from "./pages/Other-Services/ValueAddedService";
 import ContactWidget from "./components/ContactWidget/ContactWidget";
+import Contact_Us from "./pages/Contact-Us";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/transportation" element={<Transportation />} />
         <Route path="/buyers-console" element={<BuyersConsole />} />
         <Route path="/value-added" element={<ValueAddedService />} />
+        <Route path="/contact" element={<Contact_Us />} />
 
         {/* Arabic */}
         <Route path="/ar" element={<Home />} />
@@ -55,8 +57,9 @@ function App() {
         <Route path="/ar/transportation" element={<Transportation />} />
         <Route path="/ar/buyers-console" element={<BuyersConsole />} />
         <Route path="/ar/value-added" element={<ValueAddedService />} />
+        <Route path="/ar/contact" element={<Contact_Us />} />
       </Routes>
-      <WhatsAppButton />
+
       <Footer />
     </Router>
   );
