@@ -221,3 +221,86 @@
     letter-spacing: 0.5px;
   }
 }
+.testimonial-moving {
+  padding: 70px 20px 20px;
+  text-align: center;
+}
+
+.testimonial-title {
+  font-size: 42px;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+  margin-bottom: 40px;
+}
+
+
+.testimonial-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+
+.testimonial-track {
+  display: flex;
+  gap: 40px;
+  width: max-content;
+  animation: testimonialLoop 25s linear infinite;
+}
+
+
+.testimonial-box {
+  width: 380px;
+  padding: 25px 30px;
+  background: #0d0d0d;
+  border: 1px solid rgba(248, 191, 127, 0.25);
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(248, 191, 127, 0.08);
+  transition: .3s ease;
+}
+
+.testimonial-box p {
+  color: #dcdcdc;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.testimonial-box h4 {
+  margin-top: 15px;
+  color: rgba(248, 191, 127);
+  font-size: 18px;
+}
+
+@keyframes testimonialLoop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+
+@media (max-width: 768px) {
+  .testimonial-box {
+    width: 280px;
+  }
+  .testimonial-title {
+    font-size: 32px;
+  }
+}
+/* ============================
+   FIX: Marquee breaks in Arabic
+   Force marquee to behave LTR
+============================*/
+
+.testimonial-moving,
+.testimonial-marquee,
+.testimonial-track,
+.testimonial-box,
+.marquee-wrapper,
+.marquee-content {
+  direction: ltr !important;
+}
+
+/* Office cards text can remain RTL */
+.office-card h3 {
+  direction: rtl;
+  text-align: center;
+}

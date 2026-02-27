@@ -51,16 +51,6 @@
         "initial": "BA",
         "name": "Badr",
         "role": "Supply Chain Manager"
-      },
-      {
-        "initial": "AS",
-        "name": "Ashiq",
-        "role": "Logistics Coordinator"
-      },
-      {
-        "initial": "SH",
-        "name": "Shahin",
-        "role": "IT Support"
       }
     ]
   }

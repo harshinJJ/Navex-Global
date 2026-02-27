@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import emailjs from "emailjs-com";
 import { useState } from "react";
+import toast from "../../toastConfig";
 
 export default function Footer() {
   const { t } = useTranslation("footer");
@@ -19,7 +20,7 @@ export default function Footer() {
     e.preventDefault();
 
     if (!email) {
-      alert("Please enter your email");
+      toast.error("Please enter your email");
       return;
     }
 
@@ -31,11 +32,11 @@ export default function Footer() {
         "YOUR_PUBLIC_KEY",
       )
       .then(() => {
-        alert("Subscribed successfully!");
+        toast.success("Subscribed successfully!");
         setEmail("");
       })
       .catch(() => {
-        alert("Something went wrong!");
+        toast.error("Something went wrong!");
       });
   };
 
@@ -47,7 +48,7 @@ export default function Footer() {
         className="footer-section"
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         {/* TOP */}
         <motion.div className="footer-top" variants={fadeUp}>

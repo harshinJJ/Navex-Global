@@ -23,23 +23,21 @@ export default function DesktopNav({ langPrefix }) {
   ];
 
   const isServicesActive = [
-    "/liner-shipping",
+    "/project-logistics",
     "/customs-clearance",
     "/warehouse-3pl",
-    "/project-logistics",
     "/transportation",
-    "/buyers-console",
     "/value-added",
+    "/buyers-console",
   ].some((route) => currentPath === `${langPrefix}${route}`);
 
   const servicesList = [
-    { route: "liner-shipping", label: t("liner") },
+    { route: "project-logistics", label: t("project") },
     { route: "customs-clearance", label: t("customs") },
     { route: "warehouse-3pl", label: t("warehouse") },
-    { route: "project-logistics", label: t("project") },
     { route: "transportation", label: t("transport") },
-    { route: "buyers-console", label: t("buyers") },
     { route: "value-added", label: t("value") },
+    { route: "buyers-console", label: t("buyers") },
   ];
 
   return (

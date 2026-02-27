@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./i18n";
+import { Toaster } from "react-hot-toast";
+import { toastOptions } from "./toastConfig";
 
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -26,6 +28,8 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <Toaster position="top-right" toastOptions={toastOptions} />
+
       <Header />
       <Routes>
         {/* English */}

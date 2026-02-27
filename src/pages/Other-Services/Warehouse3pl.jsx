@@ -9,6 +9,9 @@ import whybg from "../../assets/services/logistics.png";
 import Dubai from "../../assets/Country/Dubai1.png";
 import Saudi from "../../assets/Country/Saudi1.png";
 import India from "../../assets/Country/India1.png";
+import Pakistan from "../../assets/Country/pakistan.png";
+import China from "../../assets/Country/China.png";
+import Bangladesh from "../../assets/Country/Bangladesh.png";
 
 import { FaCogs, FaGlobe, FaShieldAlt, FaHeadset } from "react-icons/fa";
 
@@ -47,7 +50,7 @@ function Warehouse3pl() {
           variants={smoothReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
         >
           {t("hero.title").split(" ").slice(0, -1).join(" ")}{" "}
           <span className="highlight">
@@ -64,7 +67,7 @@ function Warehouse3pl() {
             variants={softStagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2 className="services-heading" variants={softItem}>
               {t("heading")}
@@ -163,7 +166,6 @@ function Warehouse3pl() {
         softStagger={softStagger}
         softItem={softItem}
       />
-
       <ServiceOffices
         title1={tComp("offices.title1")}
         title2={tComp("offices.title2")}
@@ -172,9 +174,10 @@ function Warehouse3pl() {
           { img: Saudi, name: tComp("offices.saudi") },
           { img: India, name: tComp("offices.india") },
           { img: Dubai, name: tComp("offices.uae") },
+          { img: Pakistan, name: tComp("offices.pakistan") },
+          { img: China, name: tComp("offices.china") },
+          { img: Bangladesh, name: tComp("offices.bangladesh") },
         ]}
-        softSection={softSection}
-        softItem={softItem}
       />
     </div>
   );

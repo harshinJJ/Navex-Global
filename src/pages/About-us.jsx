@@ -44,7 +44,7 @@ export default function About_us() {
       variants={smoothReveal}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.4 }}
+      viewport={{ once: true, amount: 0.4 }}
     >
       <div className="progress-header">
         <span>{label}</span>
@@ -60,7 +60,7 @@ export default function About_us() {
             duration: 1.5,
             ease: [0.22, 1, 0.36, 1],
           }}
-          viewport={{ once: false }}
+          viewport={{ once: true }}
         />
       </div>
     </motion.div>
@@ -102,7 +102,7 @@ export default function About_us() {
           variants={smoothReveal}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.5 }}
         >
           {t("hero.title").split(" ")[0]}{" "}
           <span className="highlight">{t("hero.title").split(" ")[1]}</span>
@@ -118,7 +118,7 @@ export default function About_us() {
             variants={smoothStagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             <motion.span className="about-values-tag" variants={smoothReveal}>
               {t("values.tag")}
@@ -150,7 +150,7 @@ export default function About_us() {
             variants={smoothReveal}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <img src={aboutcard1} alt="About" />
           </motion.div>
@@ -171,7 +171,7 @@ export default function About_us() {
             variants={smoothStagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <motion.h2
               className="about-performance-title"
@@ -222,7 +222,7 @@ export default function About_us() {
             variants={cardReveal}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             <span className="about-team-tag">{t("team.tag")}</span>
 
@@ -240,7 +240,7 @@ export default function About_us() {
             variants={cardContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }}
+            viewport={{ once: true, amount: 0.2 }}
           >
             {members.map((member, index) => (
               <motion.div

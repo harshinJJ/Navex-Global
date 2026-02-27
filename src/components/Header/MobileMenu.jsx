@@ -21,13 +21,12 @@ export default function MobileMenu({
   ];
 
   const servicesList = [
-    { route: "/liner-shipping", label: t("liner") },
+    { route: "/project-logistics", label: t("project") },
     { route: "/customs-clearance", label: t("customs") },
     { route: "/warehouse-3pl", label: t("warehouse") },
-    { route: "/project-logistics", label: t("project") },
     { route: "/transportation", label: t("transport") },
-    { route: "/buyers-console", label: t("buyers") },
     { route: "/value-added", label: t("value") },
+    { route: "/buyers-console", label: t("buyers") },
   ];
 
   const isActive = (route) => currentPath === `${langPrefix}${route}`;

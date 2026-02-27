@@ -69,14 +69,17 @@ function ServiceCard({ img, title, desc }) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && !visible) setVisible(true);
-          else if (!entry.isIntersecting && visible) setVisible(false);
+          if (entry.isIntersecting && !visible) {
+            setVisible(true);
+            observer.unobserve(entry.target);
+          }
         });
       },
       { threshold: 0.4 },
     );
 
     if (ref.current) observer.observe(ref.current);
+
     return () => ref.current && observer.unobserve(ref.current);
   }, [visible]);
 

@@ -22,7 +22,7 @@ function ServiceWhy({
             variants={softSection}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             {title1} <span className="brand-highlight">{title2}</span>
           </motion.h3>
@@ -32,7 +32,7 @@ function ServiceWhy({
             variants={softStagger}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3 }}
           >
             {items.map((item, index) => {
               const Icon = icons[index];

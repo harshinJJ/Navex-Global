@@ -26,7 +26,7 @@ export default function About() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.2, once: false }}
+          viewport={{ amount: 0.2, once: true }}
           transition={{ duration: 0.7 }}
         >
           <h1>
@@ -41,6 +41,7 @@ export default function About() {
               className="card"
               variants={fadeUp}
               transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
               <h2>01.</h2>
               <h3>{t("about.card1.title")}</h3>
@@ -51,6 +52,7 @@ export default function About() {
               className="card"
               variants={fadeUp}
               transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
               <h2>02.</h2>
               <h3>{t("about.card2.title")}</h3>
@@ -61,6 +63,7 @@ export default function About() {
               className="card"
               variants={fadeUp}
               transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
               <h2>03.</h2>
               <h3>{t("about.card3.title")}</h3>
@@ -74,7 +77,7 @@ export default function About() {
           className="about-right"
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.2, once: false }}
+          viewport={{ amount: 0.2, once: true }}
           variants={{
             hidden: { opacity: 0, x: 40 },
             visible: { opacity: 1, x: 0 },
@@ -85,6 +88,7 @@ export default function About() {
             className="vm-block"
             variants={fadeUp}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
             <h3>{t("about.vision.title")}</h3>
             <p>{t("about.vision.text")}</p>
@@ -94,6 +98,7 @@ export default function About() {
             className="vm-block"
             variants={fadeUp}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
             <h3>{t("about.mission.title")}</h3>
             <p>{t("about.mission.text")}</p>
@@ -103,6 +108,7 @@ export default function About() {
             className="vm-block"
             variants={fadeUp}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
             <h3>{t("about.values.title")}</h3>
             <p>{t("about.values.text")}</p>

@@ -12,7 +12,7 @@ export default function Intro() {
           className="intro-left"
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="intro-heading">
@@ -26,7 +26,7 @@ export default function Intro() {
           className="intro-right"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.8 }}
         >
           <div className="intro-image"></div>
